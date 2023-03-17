@@ -10,6 +10,7 @@ import useRefresh from './useRefresh';
 export default function HeaderLayout() {
   useRefresh()
   const pathname = usePathname();
+  console.log("🚀 ~ file: headerLayout.jsx:13 ~ HeaderLayout ~ pathname:", pathname)
   const showHeader = useShowHeader();
 
   return (
@@ -50,8 +51,9 @@ export default function HeaderLayout() {
                   </li>
                   <li>
                     <a
+                     data-tooltip="敬請期待"
                       className={`${styles['navBtn']} ${styles['marketing']}`}
-                      href='marketing'
+                      // href='marketing'
                     >marketing</a>
                   </li>
                 </ul>
