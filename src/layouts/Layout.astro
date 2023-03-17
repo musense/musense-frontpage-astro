@@ -4,9 +4,10 @@ import HeaderLayout from '@components/layout/headerLayout';
 
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -27,8 +28,12 @@ const { title } = Astro.props;
       content={Astro.generator}
     />
     <title>{title}</title>
+    <meta
+      name='description'
+      content={description}
+    />
   </head>
-  <body id="root">
+  <body id='root'>
     <HeaderLayout client:load />
 
     <slot />
@@ -48,12 +53,11 @@ const { title } = Astro.props;
 
     --clamp-line: 3;
   }
-  html{
+  html {
     height: 100%;
     overflow: auto;
   }
-  body{
+  body {
     height: 100%;
   }
- 
 </style>

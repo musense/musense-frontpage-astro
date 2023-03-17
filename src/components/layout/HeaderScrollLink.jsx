@@ -18,7 +18,7 @@ export default function HeaderScrollLink({ currentId, offset, className, to }) {
       btn = document.getElementById(currentId);
       btn.addEventListener('click', scrollHandler)
     }
-    
+
     return () => {
       btn.removeEventListener('click', scrollHandler)
     }
@@ -28,6 +28,7 @@ export default function HeaderScrollLink({ currentId, offset, className, to }) {
     <button
       id={currentId}
       className={className}
+      title={to}
     ></button>
   );
 }
