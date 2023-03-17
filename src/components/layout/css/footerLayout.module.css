@@ -1,0 +1,110 @@
+.footer-wrapper {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 298px;
+  background-image: url(./../.../../../../assets//img/footer.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 90px;
+  font-family: Openhuninn;
+
+  letter-spacing: 4px;
+}
+.footer-wrapper.marketing{
+  margin-top: 154px;
+}
+
+.footer-wrapper.content{
+  margin-top: -1px;
+}
+
+.footer-wrapper * div {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.footer-box {
+  position: absolute;
+  margin-top: 57px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--contact-us-width);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-side,
+.right-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 17px;
+}
+
+.left-side {
+  width: 482px;
+  font-size: 16px;
+}
+
+.right-side {
+  width: 400px;
+  font-size: 14px;
+  justify-content: flex-end
+}
+
+.button-box{
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 143px;
+  align-items: center;
+}
+.contact-us-btn {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  background-image: url(./../../../assets//img/contactUsDown.png);
+  /* background-position: left !important; */
+  /* cursor: pointer; */
+}
+/* .contact-us-btn:hover {
+  background-image: url(./../../../assets//img/button/contactButton_h.png);
+} */
+
+.social-btn-box {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.social-btn-box > a {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+.fb-icon {
+  background-image: url(./../../../assets//img/FBIcon.png);
+}
+.ig-icon {
+  background-image: url(./../../../assets//img/IGIcon.png);
+}
+.ms-icon {
+  background-image: url(./../../../assets//img/MSIcon.png);
+}
+.mail-icon {
+  background-image: url(./../../../assets//img/MailIcon.png);
+}
+.aa{
+  font-size: 22px;
+    padding-bottom: 21px;
+    font-family: TaipeiSansTCBeta;
+}
