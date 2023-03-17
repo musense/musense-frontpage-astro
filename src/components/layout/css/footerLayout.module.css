@@ -108,3 +108,31 @@
     padding-bottom: 21px;
     font-family: TaipeiSansTCBeta;
 }
+
+
+@media (max-width: 1200px) {
+
+  .footer-wrapper {
+    width: 100vw;
+    height: 338px;
+    background-image: url(/assets/img/footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 90px;
+    font-family: Openhuninn;
+    letter-spacing: 4px;
+  }
+
+  .footer-box {
+    width: 90vw;
+  }
+
+  .left-side {
+    width: 335px;
+  }
+
+  .right-side {
+    width: 380px;
+  }
+}

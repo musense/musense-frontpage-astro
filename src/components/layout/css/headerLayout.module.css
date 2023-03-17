@@ -23,9 +23,9 @@ header.show {
   top: 0;
 }
 
-.navbar-wrapper{
+.navbar-wrapper {
   position: relative;
-  margin: 0 auto 22px;;
+  margin: 0 auto 22px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -65,7 +65,7 @@ nav ul li button:focus,
 nav ul li button:active {
   outline: unset;
 }
-[data-tooltip]::before{
+[data-tooltip]::before {
   position: absolute;
   content: attr(data-tooltip);
   width: 90px;
@@ -107,4 +107,26 @@ nav ul li button:active {
 }
 .marketing {
   background-image: url(./../../../assets/img/marketing.png);
+}
+
+@media (max-width: 1200px) {
+  /* header,
+  header.show,
+  header.hide {
+    padding: 0;
+  } */
+  header {
+    width: 100vw;
+    height: 190px;
+    align-items: flex-end;
+    --n-header-height: -190px;
+  }
+
+  .navbar-wrapper {
+    margin: 0 auto 22px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
+  }
+
 }

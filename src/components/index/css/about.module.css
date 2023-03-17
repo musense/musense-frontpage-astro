@@ -63,28 +63,7 @@
 .free:hover {
   background-image: url(./../../../assets//img/index/bottom/free_h.png);
 } */
-.bubble-box {
-  position: relative;
-  margin: 240px auto 0;
-  width: 1110px;
-  display: flex;
-  flex-direction: column;
-}
-.bubble-box > div {
-  position: inherit;
-  display: flex;
-  flex-direction: row;
-  gap: 186px;
-  width: fit-content;
-}
-.bubble-box > div:first-child {
-  margin-left: 0;
-}
-.bubble-box > div:last-child {
-  margin-right: 0;
-  margin-left: auto;
-  top: -20px;
-}
+
 
 /* [data-aos='orange-slide-left'],
 [data-aos='blue-slide-left'] {
@@ -150,4 +129,54 @@
 .triangle-range-orange-left {
   margin-left: 0;
   background-image: url(./../../../assets//img/index/triangleRangeOrange_left.png);
+}
+
+@media (max-width: 1200px) {
+
+  .about-us {
+    width: 100vw;
+  }
+  .about-box {
+    width: 80vw;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    height: 60vw;
+    gap: 20px;
+  }
+
+  .slogan {
+    width: 509px;
+    height: 73px;
+    margin: 0;
+    flex: 1;
+  }
+  .top-image {
+    height: 391px;
+    flex: 2;
+    margin: 0;
+  }
+  .welcome {
+    width: 90vw;
+    height: 3vw;
+    margin: 9vw auto 0;
+  }
+
+  .musense-can-help {
+    width: 22vw;
+    margin: 8vw auto 0;
+  }
+
+  .reply {
+    width: 75vw;
+    margin: 5vw auto 0;
+  }
+
+  .triangle-box {
+    width: 80vw;
+    height: -moz-fit-content;
+    margin: 7vw auto 0;
+    gap: 4vw;
+  }
+
 }

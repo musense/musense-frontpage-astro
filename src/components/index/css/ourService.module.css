@@ -81,3 +81,30 @@
   background-position: top;
   background-size: contain;
 }
+
+@media (max-width: 1200px) {
+
+  .our-service {
+    width: 100vw;
+    height: 5vw;
+  }
+
+  .our-service-wrapper {
+    width: 100%;
+    gap: 5vw;
+  }
+
+  .service-box {
+    column-gap: 10vw;
+    row-gap: 15vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+  }
+
+  .why-musense {
+    margin: 10vw auto 0;
+    width: 100vw;
+    height: 38vw;
+  }
+}

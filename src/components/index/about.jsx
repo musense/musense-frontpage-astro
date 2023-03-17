@@ -15,17 +15,14 @@ export default function About() {
   return (
     <div className={styles['about-us']}>
       <div className={styles['bg']} />
-      <div className={styles['about-box']}>
+      <div id='about'  className={styles['about-box']}>
         <div className={styles['slogan']} />
-        <div
-          id='about'
-          className={styles['top-image']}
-        />
+        <div className={styles['top-image']} />
       </div>
 
       <div className={styles['welcome']} />
 
-      <div className={styles['bubble-box']}>
+      <div className={'bubble-box'}>
         <div>
           <div
             className={'orange-bubble-left'}

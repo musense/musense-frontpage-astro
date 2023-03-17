@@ -156,3 +156,31 @@ input:focus {
 .modal-close:checked {
   border: 1px solid red;
 }
+
+
+@media (max-width: 1200px) {
+
+
+  .contact-us {
+    width: 100vw;
+    height: 5vw;
+  }
+
+  .contact-us-content {
+    --contact-us-width: 80vw;
+    margin: 10vw auto 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-us-form {
+    align-items: center;
+    gap: 5vw;
+  }
+  .orange-box {
+    display: none;
+  }
+
+  .send-button {
+    margin: 0;
+  }
+}
