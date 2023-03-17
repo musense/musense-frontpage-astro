@@ -61,24 +61,21 @@ export default function HeaderLayout() {
                   <li>
                     <HeaderHashLink
                       className={`${styles['navBtn']} ${styles['about']}`}
-                      to='/#about-us'
-                      offset={0}
+                      to='about'
                     />
                   </li>
 
                   <li>
                     <HeaderHashLink
                       className={`${styles['navBtn']} ${styles['service']}`}
-                      to='/#service'
-                      offset={-30}
+                      to='service'
                     />
                   </li>
 
                   <li>
                     <HeaderHashLink
                       className={`${styles['navBtn']} ${styles['contactUs']}`}
-                      to='/#contactUs'
-                      offset={-100}
+                      to='contact'
                     />
                   </li>
                   <li>
