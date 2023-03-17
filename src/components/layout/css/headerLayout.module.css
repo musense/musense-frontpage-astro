@@ -58,25 +58,35 @@ nav ul li a {
   position: relative;
   cursor: pointer;
   color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 nav ul li button:focus,
 nav ul li button:active {
   outline: unset;
 }
-[data-tooltip]:hover::before {
+[data-tooltip]::before{
   position: absolute;
   content: attr(data-tooltip);
-  width: 100px;
-  height: 50px;
+  width: 90px;
+  height: 40px;
   background-color: #aaa;
   color: #fff;
-  border-radius: 10px;
-  border-color: #aaa;
+  border-radius: 15px;
+  border-color: currentColor;
   text-align: center;
-  line-height: 50px;
-  top: -10px;  
+  line-height: 40px;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -100%);
+  letter-spacing: 1.5px;
+  transform: translate(0, -0%);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translate(70%, 0);
 }
 .navBtn {
   position: absolute;
