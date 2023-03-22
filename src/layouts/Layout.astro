@@ -1,6 +1,7 @@
 ---
-import FooterLayout from '@components/layout/footerLayout';
 import HeaderLayout from '@components/layout/headerLayout';
+import ButtonLayout from '@components/layout/buttonLayout';
+import FooterLayout from '@components/layout/footerLayout';
 
 export interface Props {
   title: string;
@@ -35,7 +36,7 @@ const { title, description } = Astro.props;
   </head>
   <body id='root'>
     <HeaderLayout client:load />
-
+    <ButtonLayout client:load />
     <slot />
 
     <FooterLayout client:idle />
@@ -43,6 +44,18 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
+  html,
+  body {
+    margin: 0;
+  }
+  @font-face {
+    font-family: Openhuninn;
+    src: url(/assets/fonts/jf-openhuninn-2.0.ttf);
+  }
+  @font-face {
+    font-family: TaipeiSansTCBeta;
+    src: url(/assets/fonts/TaipeiSansTCBeta-Regular.ttf);
+  }
   :root {
     --n-header-height: -120px;
     --header-height: 120px;
@@ -51,27 +64,308 @@ const { title, description } = Astro.props;
     --banner-top-offset: calc(var(--header-height) + 44px);
     --contact-us-width: 1240px;
     --clamp-line: 3;
+
+    --header-z-index: 99999;
+
+    --theme-color-hex: #f88d2a;
+    --theme-color-rgb: 248, 141, 42;
+
+    --header-btn-width: 11.5rem;
+    --header-btn-height: 3.5rem;
   }
   html {
-    height: 100%;
+    font-size: 62.5%;
     overflow: auto;
   }
-  body {
-    height: 100%;
+
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: unset;
   }
 
-  /* Extra large devices */
- 
+  header {
+    position: fixed;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 12rem;
+    box-shadow: 0px 5px 3px 0px #eee;
+    background-color: #fff;
+    z-index: var(--header-z-index);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: top 0.2s ease-in;
+  }
 
+  header.hide {
+    top: calc(var(--n-header-height) - 5px - 3px);
+  }
+  header.show {
+    top: 0;
+  }
+
+  .hamburger {
+    --hamburger-height: 2.5rem;
+    --hamburger-width: 2.3rem;
+    position: absolute;
+    bottom: 2.2rem;
+    right: 3.2rem;
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    z-index: calc(var(--header-z-index) + 1);
+  }
+
+  .hamburger > input {
+    position: absolute;
+    appearance: none;
+    margin: unset;
+    padding: unset;
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    cursor: pointer;
+    z-index: 1;
+  }
+  .hamburger > span {
+    display: block;
+    width: calc(var(--hamburger-width) - 0.2rem);
+    height: 0.1rem;
+    background-color: var(--theme-color-hex);
+    border: 0.1rem solid var(--theme-color-hex);
+    border-radius: 1rem;
+    z-index: 0;
+  }
+  input[name='hamburger-check']:checked ~ span:nth-child(3) {
+    opacity: 0;
+  }
+  input[name='hamburger-check']:checked ~ span:nth-child(2) {
+    width: calc(calc(var(--hamburger-width) - 0.2rem) * 1.414);
+    transform-origin: top left;
+    transform: rotate(45deg);
+    /* transform: translateY(1.15rem) rotate(-45deg); */
+  }
+  input[name='hamburger-check']:checked ~ span:nth-child(4) {
+    width: calc(calc(var(--hamburger-width) - 0.2rem) * 1.414);
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    /* transform: translateY(-1.15rem) rotate(45deg); */
+  }
+
+  nav {
+    /* display: none; */
+  }
+  ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    width: var(--header-btn-width);
+    height: var(--header-btn-height);
+  }
+
+  a {
+    position: relative;
+    cursor: pointer;
+    color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  [data-tooltip]::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: 90px;
+    height: 40px;
+    background-color: #aaa;
+    color: #fff;
+    border-radius: 15px;
+    border-color: currentColor;
+    text-align: center;
+    line-height: 40px;
+    top: 0;
+    left: 50%;
+    letter-spacing: 1.5px;
+    transform: translate(0, -0%);
+    opacity: 0;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translate(70%, 0);
+  }
+  .navBtn {
+    position: absolute;
+    width: var(--header-btn-width);
+    height: var(--header-btn-height);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+  }
+  .navBtn:focus-visible {
+    outline: none;
+  }
+  .about {
+    background-image: url(/assets/about.png);
+  }
+  .service {
+    background-image: url(/assets/service.png);
+  }
+  .contact {
+    background-image: url(/assets/contact.png);
+  }
+  .marketing {
+    background-image: url(/assets/marketing.png);
+  }
+
+  .navbar-wrapper {
+    width: 100vw;
+  }
+  /* @media (max-width: 1200px) {
+
+    header {
+      height: 19rem;
+      align-items: flex-end;
+      --n-header-height: -19rem;
+    }
+  } */
   /* desktops */
   @media (max-width: 992px) {
   }
 
   /* tablets */
   @media (max-width: 768px) {
-  }
+    html{
+      font-family: Openhuninn;
+    }
+    .hamburger {
+      display: flex;
+    }
+    /* .hamburger:has(input[type="checkbox"]:checked) {
+      display: flex;
+    } */
+    header {
+      height: 12rem;
+    }
+    header.hide {
+      top: calc(var(--n-header-height) - 5px - 3px);
+    }
+    header.show {
+      top: 0;
+    }
+    nav {
+      position: absolute;
+      display: block;
+      right: 0;
+      top: 6.6rem;
+      width: 20.2rem;
+      height: 34rem;
+      background-image: url(/assets/mobile/header/menu_bg.png);
+      transition: transform 0.2s ease-in-out;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform-origin: top right;
+      box-sizing: border-box;
+      padding: 4rem 0;
+      transform: scale(0);
+    }
+    nav.active {
+      transform: scale(1);
+    }
+    ul {
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      box-sizing: border-box;
+      gap: unset;
+    }
+    li {
+      --header-btn-width: 12.3rem;
+      --header-btn-height: 3.3rem;
+      width: var(--header-btn-width);
+      height: var(--header-btn-height);
+    }
 
-  /* phones */
-  @media (max-width: 576px) {
+    .navbar-wrapper {
+      position: relative;
+      margin: 0 auto 22px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 245px;
+    }
+
+    nav ul li button:focus,
+    nav ul li button:active {
+      outline: unset;
+    }
+
+    .about {
+      background-image: url(/assets/mobile/header/about.png);
+    }
+    .service {
+      background-image: url(/assets/mobile/header/service.png);
+    }
+    .contact {
+      background-image: url(/assets/mobile/header/contact.png);
+    }
+    .marketing {
+      background-image: url(/assets/mobile/header/marketing.png);
+    }
+
+    .btn-wrapper {
+      --fixed-btn-width: 11.5rem;
+      --fixed-btn-gap: 2rem;
+      position: fixed;
+      width: calc(var(--fixed-btn-width) * 3 + var(--fixed-btn-gap) * 2);
+      height: 3.7rem;
+      bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      /* background-color: #ccc; */
+      z-index: var(--header-z-index);
+      box-sizing: border-box;
+      padding: 0 0.7rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .fixedBtn {
+      position: relative;
+      width: var(--fixed-btn-width);
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-color: transparent;
+      border: none;
+    }
+    .fixedBtn:focus-visible {
+      outline: none;
+    }
+    .fb-btn {
+      background-image: url(/assets/mobile/header/fb.png);
+    }
+    .ig-btn {
+      background-image: url(/assets/mobile/header/ig.png);
+    }
+    .email-btn {
+      background-image: url(/assets/mobile/header/email.png);
+    }
   }
 </style>

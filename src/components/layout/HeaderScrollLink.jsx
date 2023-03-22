@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function HeaderScrollLink({ currentId, offset, className, to }) {
+export default function HeaderScrollLink({ currentId, className ,offset, to }) {
   const targetRef = useRef(null)
   const scrollHandler = () => {
     window.scrollTo({
@@ -29,6 +29,7 @@ export default function HeaderScrollLink({ currentId, offset, className, to }) {
       id={currentId}
       className={className}
       title={to}
-    ></button>
+    >
+    </button>
   );
 }

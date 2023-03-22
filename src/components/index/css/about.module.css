@@ -1,8 +1,8 @@
 .about-us {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   height: fit-content;
-  top: var(--top-offset);
+  margin-top: var(--top-offset);
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -16,10 +16,9 @@
 
 .bg {
   position: absolute;
-  width: 100%;
-  height: 907px;
-  /* background-image: url(./../../../assets//img/index/bg.png); */
-  background-image: url(./../../../assets//img/index/bg.png);
+  /* max-width: 100%; */
+  max-height: 907px;
+  background-image: url(/assets/index/bg.png);
   top: 186px;
 }
 
@@ -33,7 +32,7 @@
   width: 509px;
   height: 73px;
   margin: calc(-90px + 186px) auto 0 410px;
-  background-image: url(./../../../assets//img/index/slogan.png);
+  background-image: url(/assets/index/slogan.png);
 }
 
 .top-image {
@@ -41,14 +40,14 @@
   width: 497px;
   height: 391px;
   margin: 0 414px 0 auto;
-  background-image: url(./../../../assets//img/index/topImage.png);
+  background-image: url(/assets/index/topImage.png);
 }
 .welcome {
   position: relative;
   width: 1138px;
   height: 27px;
   margin: 241px auto 0;
-  background-image: url(./../../../assets//img/index/welcome.png);
+  background-image: url(/assets/index/welcome.png);
 }
 /* .free {
   position: relative;
@@ -56,14 +55,13 @@
   height: 122px;
   top: 446px;
   right: 75px;
-  background-image: url(./../../../assets//img/index/bottom/free.png);
+  background-image: url(/assets/index/bottom/free.png);
 
   cursor: pointer;
 }
 .free:hover {
-  background-image: url(./../../../assets//img/index/bottom/free_h.png);
+  background-image: url(/assets/index/bottom/free_h.png);
 } */
-
 
 /* [data-aos='orange-slide-left'],
 [data-aos='blue-slide-left'] {
@@ -94,7 +92,7 @@
   width: 266px;
   height: 66px;
   margin: 134px auto 0;
-  background-image: url(./../../../assets//img/index/musenseCanHelp.png);
+  background-image: url(/assets/index/musenseCanHelp.png);
 }
 
 .reply {
@@ -102,7 +100,7 @@
   width: 832px;
   height: 74px;
   margin: 47px auto 0;
-  background-image: url(./../../../assets//img/index/reply.png);
+  background-image: url(/assets/index/reply.png);
 }
 
 .triangle-box {
@@ -124,59 +122,130 @@
 .triangle-range-orange-right {
   margin-left: auto;
   margin-right: 0;
-  background-image: url(./../../../assets//img/index/triangleRangeOrange_right.png);
+  background-image: url(/assets/index/triangleRangeOrange_right.png);
 }
 .triangle-range-orange-left {
   margin-left: 0;
-  background-image: url(./../../../assets//img/index/triangleRangeOrange_left.png);
+  background-image: url(/assets/index/triangleRangeOrange_left.png);
 }
 
-@media (max-width: 1200px) {
-
+@media (max-width: 768px) {
   .about-us {
-    width: 100vw;
+    --top-offset: 12rem;
   }
   .about-box {
-    width: 80vw;
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
-    height: 60vw;
-    gap: 20px;
+    width: 100dvw;
+    height: fit-content;
+    gap: 2rem;
+    margin-top: 12rem;
+    flex-direction: column-reverse;
   }
-
   .slogan {
-    width: 509px;
-    height: 73px;
-    margin: 0;
-    flex: 1;
+    width: 35rem;
+    height: 2.8rem;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(/assets/mobile/about/slogan.png);
   }
-  .top-image {
-    height: 391px;
-    flex: 2;
-    margin: 0;
-  }
-  .welcome {
-    width: 90vw;
-    height: 3vw;
-    margin: 9vw auto 0;
+  .slogan::after {
+    content: '';
+    background-image: url(/assets/mobile/about/slogan2.png);
+    display: block;
+    position: relative;
+    width: 16rem;
+    height: 3rem;
+    margin: 5rem auto 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
+  .top-image {
+    position: relative;
+    height: 23rem;
+    width: 29rem;
+    margin: 0 auto;
+    background-image: url(/assets/mobile/about/topImage.png);
+  }
+  .bg {
+    background-image: url(/assets/mobile/about/top_bg_decorate.png);
+    width: calc(114rem / 3);
+    height: calc(39rem / 3);
+    top: 0;
+  }
+
+  .welcome {
+    position: relative;
+    width: calc(100dvw - 1.6rem);
+    height: 1.4rem;
+    margin: 11rem auto 0;
+    background-image: url(/assets/mobile/about/welcome.png);
+  }
   .musense-can-help {
-    width: 22vw;
-    margin: 8vw auto 0;
+    position: relative;
+    width: 19rem;
+    height: 2rem;
+    margin: 8rem auto 0;
+    background-image: url(/assets/mobile/about/musenseCanHelp_ch.png);
+  }
+  .musense-can-help::after {
+    content: '';
+    background-image: url(/assets/mobile/about/musenseCanHelp_en.png);
+    display: block;
+    position: absolute;
+    width: 16rem;
+    height: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .reply {
-    width: 75vw;
-    margin: 5vw auto 0;
+    position: relative;
+    width: 36rem;
+    height: 2rem;
+    margin: 9rem auto 0;
+    background-image: url(/assets/mobile/about/reply.png);
+  }
+
+  .reply::before,
+  .reply::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .reply::before {
+    width: 11rem;
+    height: 3rem;
+    bottom: 4rem;
+    background-image: url(/assets/mobile/about/deco_orange.png);
+  }
+  .reply::after {
+    width: 35rem;
+    height: 1rem;
+    top: 2.6rem;
+    background-image: url(/assets/mobile/about/reply_sub.png);
   }
 
   .triangle-box {
-    width: 80vw;
-    height: -moz-fit-content;
-    margin: 7vw auto 0;
-    gap: 4vw;
+    position: relative;
+    display: block;
+    background-image: url(/assets/mobile/about/deco_blue.png);
+    width: calc(110rem / 3);
+    height: calc(39rem / 3);
+    margin: unset;
+    margin-top: 6rem;
+    float: right;
   }
-
+  .triangle-box > div {
+    display: none;
+  }
 }

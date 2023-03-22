@@ -8,6 +8,7 @@
   width: 100%;
   background-color: hsla(0, 0%, 100%, 0.9);
   overflow: hidden;
+  z-index: calc(var(--header-z-index) + 100);
 }
 .modal-layout.hide {
   display: none;
@@ -103,4 +104,18 @@
 }
 
 .modal-footer {
+}
+
+@media (max-width: 768px) {
+  .modal-layout {
+    height: 100lvh;
+  }
+  .modal-header{
+    font-size: 2.4rem;
+  }
+  .modal-body {
+    font-size: 1.8rem;
+    line-height: 2;
+    white-space: pre-wrap;
+  }
 }

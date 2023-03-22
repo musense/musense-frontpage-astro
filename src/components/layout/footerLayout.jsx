@@ -1,6 +1,6 @@
 import Logo from './logo';
 import styles from './css/footerLayout.module.css';
-import usePathname from './usePathname';
+import usePathname from './hook/usePathname';
 
 export default function FooterLayout() {
 
@@ -10,7 +10,7 @@ export default function FooterLayout() {
     <footer className={`${styles['footer-wrapper']} ${styles[pathname.replaceAll('/', '').replace(/[1-9]/g, '').toLowerCase()]}`}>
       <div className={styles['footer-box']}>
         <div className={styles['left-side']}>
-          <Logo color={'white'} />
+          <Logo position={'footer'} color={'white'} />
           <span>聯絡電話：(04)2201-0520</span>
           <span>營業時間：周一至周五 9:00~18:00</span>
           <span>服務地址：403台中市西區台灣大道二段二號四樓之一</span>
@@ -25,10 +25,9 @@ export default function FooterLayout() {
               {/* <div className={styles['mail-icon' /> */}
             </div>
           </div>
-          <div className={styles['copyright']}>
-            Copyright © Musense Marketing Ltd. All Rights Reserved.Design by
-            陌聲行銷
-          </div>
+          <span className={styles['copyright']}>
+              Copyright ©  陌聲行銷有限公司.<br /> All Rights Reserved.Design by 陌聲行銷
+          </span>
         </div>
       </div>
     </footer>

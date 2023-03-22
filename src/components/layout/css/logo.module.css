@@ -1,17 +1,25 @@
 .logo {
   position: relative;
-  width: 274px;
-  height: 68px;
+  max-width: 27rem;
+  /* max-height: 68px; */
   display: block;
   background-size: contain;
   background-repeat: no-repeat;
   color: transparent;
-  /* background-image: url(./../.../../../../assets//img/logo.png); */
 }
+.logo > img {
+  width: 100%;
+}
+/* tablets */
+@media (max-width: 768px) {
+  .logo {
+    margin: 0 auto;
+  }
 
-.logo.gray{
-    background-image: url(./../.../../../../assets//img/logo_gray.png);
-}
-.logo.white{
-    background-image: url(./../.../../../../assets//img/logo_white.png);
+  .logo.header {
+    width: 16rem;
+  }
+  .logo.footer {
+    width: 16rem;
+  }
 }

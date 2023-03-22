@@ -3,7 +3,9 @@ import styles from './css/about.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 export default function About() {
+
   useEffect(() => {
     AOS.init({
       offset: 120,
@@ -12,10 +14,12 @@ export default function About() {
       easing: 'ease-in-out',
     });
   }, []);
+
+
   return (
     <div className={styles['about-us']}>
       <div className={styles['bg']} />
-      <div id='about'  className={styles['about-box']}>
+      <div id='about' className={styles['about-box']}>
         <div className={styles['slogan']} />
         <div className={styles['top-image']} />
       </div>
@@ -49,6 +53,25 @@ export default function About() {
         </div>
       </div>
 
+      <div className={'bubble-box-mobile'}>
+        <div>
+          <div
+            className={'orange-bubble-product'}
+          />
+          <div
+            className={'orange-bubble-view'}
+          />
+        </div>
+        <div>
+          <div
+            className={'blue-bubble-seo'}
+          />
+          <div
+            className={'blue-bubble-time'}
+          />
+        </div>
+      </div>
+      
       <div className={styles['musense-can-help']} />
       <div className={styles['reply']} />
       <div className={styles['triangle-box']}>

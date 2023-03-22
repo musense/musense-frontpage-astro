@@ -3,36 +3,53 @@ import Layout from '../layouts/Layout.astro';
 import About from '@components/index/about';
 import OurService from '@components/index/ourService';
 import ContactUs from '@components/index/contactUs';
+
+const env = import.meta.env;
+
+const emailProps: EmailProps = {
+  service_key: env.EMAIL_SERVICE_KEY,
+  template_key: env.EMAIL_TEMPLATE_KEY,
+  public_key: env.EMAIL_PUBLIC_KEY,
+};
+console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
+
 ---
 
 <Layout
-  title='陌聲行銷-關鍵字,FB廣告代理操作,CIS平面設計,SEO網頁設計'
-  description='陌聲行銷提供FB廣告代操,專業內容和圖文設計,專業貼近網友習性,廣告投放,專業的網頁設計,平面設計,品牌CIS設計,SEO關鍵字優化,關鍵字廣告等服務'
+  title={env.title}
+  description={env.description}
 >
   <About client:load />
   <OurService client:load />
-  <ContactUs client:load />
+  <ContactUs
+    emailProps={emailProps}
+    client:load
+  />
 </Layout>
 
 <style is:global>
+  .bubble-box-mobile {
+    display: none;
+  }
   .bubble-box {
     position: relative;
-    margin: 240px auto 0;
-    width: 1110px;
+    margin: 3.5rem auto 0;
+    width: calc(100vw - 2rem);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .bubble-box > div {
     position: inherit;
     display: flex;
-    flex-direction: row;
-    gap: 186px;
+    gap: 19rem;
     width: fit-content;
   }
   .bubble-box > div:first-child {
+    flex-direction: column-reverse;
     margin-left: 0;
   }
   .bubble-box > div:last-child {
+    flex-direction: column;
     margin-right: 0;
     margin-left: auto;
     top: -20px;
@@ -46,11 +63,11 @@ import ContactUs from '@components/index/contactUs';
   }
   .orange-bubble-right {
     margin-right: 0;
-    background-image: url(./../assets//img/index/orangeBubble_right.png);
+    background-image: url(/assets/index/orangeBubble_right.png);
   }
   .orange-bubble-left {
     margin-left: 0;
-    background-image: url(./../assets//img/index/orangeBubble_left.png);
+    background-image: url(/assets/index/orangeBubble_left.png);
   }
 
   .blue-bubble-right,
@@ -61,11 +78,11 @@ import ContactUs from '@components/index/contactUs';
   }
   .blue-bubble-right {
     margin-left: auto;
-    background-image: url(./../assets//img/index/blueBubble_right.png);
+    background-image: url(/assets/index/blueBubble_right.png);
   }
   .blue-bubble-left {
     margin-left: auto;
-    background-image: url(./../assets//img/index/blueBubble_left.png);
+    background-image: url(/assets/index/blueBubble_left.png);
   }
   [data-aos='orange-slide-left'],
   [data-aos='blue-slide-left'] {
@@ -96,20 +113,102 @@ import ContactUs from '@components/index/contactUs';
       gap: 10vw;
     }
     .bubble-box > div:first-child {
-      margin-left: 5px;
+      margin-left: 5vw;
     }
 
     .bubble-box > div:last-child {
-      margin-right: 0;
-      margin-left: 35vw;
-      top: -20px;
+      margin-right: 5vw;
+      margin-left: auto;
+      top: -2vw;
     }
 
     .orange-bubble-right,
     .orange-bubble-left,
     .blue-bubble-right,
     .blue-bubble-left {
-      width: 224px;
+      width: 24vw;
+      height: 19vw;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bubble-box {
+      display: none;
+    }
+    .bubble-box-mobile {
+      margin: 3.5rem auto 0;
+      width: calc(100dvw - 2rem);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .bubble-box-mobile > div {
+      display: flex;
+      flex-direction: column;
+      gap: 19rem;
+      margin: unset;
+    }
+    .bubble-box-mobile > div:first-child {
+    }
+    .bubble-box-mobile > div:last-child {
+      position: relative;
+      margin-top: 16rem;
+      left: -6rem;
+    }
+
+    .orange-bubble-product,
+    .orange-bubble-view,
+    .blue-bubble-time,
+    .blue-bubble-seo {
+      width: 22rem;
+      height: 16.5rem;
+    }
+    .orange-bubble-product {
+      background-image: url(/assets/mobile/about/orangeBubble_product.png);
+    }
+
+    .orange-bubble-view {
+      background-image: url(/assets/mobile/about/orangeBubble_view.png);
+    }
+    .blue-bubble-time {
+      background-image: url(/assets/mobile/about/blueBubble_time.png);
+    }
+    .blue-bubble-seo {
+      background-image: url(/assets/mobile/about/blueBubble_seo.png);
+    }
+    .orange-bubble-product::after,
+    .orange-bubble-view::after,
+    .blue-bubble-time::after,
+    .blue-bubble-seo::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 14rem;
+      height: 14rem;
+      background-image: url(/assets/mobile/about/productImage.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    .orange-bubble-product::after {
+      background-image: url(/assets/mobile/about/productImage.png);
+      margin-top: 1.3rem;
+      margin-left: 21rem;
+    }
+    .orange-bubble-view::after {
+      background-image: url(/assets/mobile/about/viewImage.png);
+      margin-top: 1.3rem;
+      margin-left: 20.5rem;
+    }
+    .blue-bubble-time::after {
+      background-image: url(/assets/mobile/about/timeImage.png);
+      margin-top: 3rem;
+      left: -12rem;
+    }
+    .blue-bubble-seo::after {
+      background-image: url(/assets/mobile/about/seoImage.png);
+      margin-top: 2.8rem;
+      left: -12rem;
     }
   }
 </style>

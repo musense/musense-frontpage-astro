@@ -1,30 +1,44 @@
 import React, { useRef, useState } from 'react';
 import styles from './css/contactUs.module.css';
 import Modal from "./modal";
-import sendEmail, { sendEmail_test } from "./../../service/emailService";
+import sendEmail from "@services/emailService";
 
-
-export default function ContactUs() {
+const checkList = new Map([
+  ['advertising', { select: 0, alias: "廣告投放代理" }],
+  ['socialMedia', { select: 0, alias: "社群口碑行銷" }],
+  ['seo', { select: 0, alias: "SEO網站優化" }],
+  ['design', { select: 0, alias: "數位形象設計" }],
+])
+export default function ContactUs({emailProps}) {
+  // console.log(import.meta.env.MODE);
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [headerContent, setHeaderContent] = useState(null);
   const [bodyContent, setBodyContent] = useState(null);
-  function tolocaleDateTimeString(dateTime) {
-    return `${new Date(dateTime).toLocaleDateString()} ${new Date(dateTime).toLocaleTimeString()}`
+
+  function getAskString(checkList) {
+    let askString = '';
+    for (const { select, alias } of checkList.values()) {
+      select === 1 && (askString += `${alias},`)
+    }
+    return askString.lastIndexOf(",") === askString.length - 1 && (askString = askString.slice(0, -1))
   }
   function getFormData(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     console.log(Object.fromEntries(formData));
+
+    const askString = getAskString(checkList)
     const userData = Object.fromEntries(formData);
     const templateParams = {
+      companyName: userData['company-name'],
       name: userData.name,
       phone: userData.phone,
       email: userData.email,
-      contactTime: tolocaleDateTimeString(userData.contact),
-      ask: userData.ask,
+      askString: askString,
+      ask: userData.ask
     };
-    sendEmail_test(templateParams)
+    sendEmail(templateParams, emailProps)
       .then(message => {
         console.log("🚀 ~ file: contactUs.jsx:64 ~ subFormData ~ message:", message)
         openModal()
@@ -38,7 +52,11 @@ export default function ContactUs() {
   function openModal(err) {
     if (err) {
       setHeaderContent("Error")
-      setBodyContent(err)
+      if (typeof err === 'string') {
+        setBodyContent(err)
+      } else {
+        setBodyContent('出了點問題，請稍後再試！')
+      }
     } else {
       setHeaderContent()
       setBodyContent()
@@ -49,6 +67,18 @@ export default function ContactUs() {
     console.log("🚀 ~ file: contactUs.jsx:49 ~ closeModal ~ closeModal: clicked!!!!!")
 
     setIsOpen(false)
+  }
+  function onCheckBoxChange(e) {
+    // checkList.
+
+    console.log(e.target.name);
+    console.log(e.target.checked);
+    const originValue = checkList.get(e.target.name)
+    checkList.set(e.target.name,
+      Object.assign({}, originValue, { select: e.target.checked ? 1 : 0 })
+    )
+    console.log("🚀 ~ file: contactUs.jsx:64 ~ onCheckBoxChange ~ checkList:", checkList)
+
   }
   return (
     <div id='contact' className={styles['contact-us-wrapper']}>
@@ -69,6 +99,12 @@ export default function ContactUs() {
           className={styles['contact-us-form']}
           onSubmit={getFormData}
         >
+          <div className={`${styles['enter-box']} ${styles['company-name']}`}>
+            <input
+              type='text'
+              name='company-name'
+            />
+          </div>
           <div className={`${styles['enter-box']} ${styles['name']}`}>
             <input
               type='text'
@@ -87,11 +123,55 @@ export default function ContactUs() {
               name='email'
             />
           </div>
-          <div className={`${styles['enter-box']} ${styles['contact']}`}>
+
+          {/* <div className={`${styles['enter-box']} ${styles['contact']}`}>
             <input
               type='datetime-local'
               name='contact'
             />
+          </div> */}
+          <div className={`${styles['enter-checkbox-list']}`}>
+
+            <div className={`${styles['enter-checkbox']} ${styles['advertising']}`}>
+              <input
+                type='checkbox'
+                name='advertising'
+                onChange={onCheckBoxChange}
+              />
+            </div>
+            <div className={`${styles['enter-checkbox']} ${styles['socialMedia']}`}>
+              <input
+                type='checkbox'
+                name='socialMedia'
+                onChange={onCheckBoxChange}
+              />
+            </div>
+            <div className={`${styles['enter-checkbox']} ${styles['seo']}`}>
+              <input
+                type='checkbox'
+                name='seo'
+                onChange={onCheckBoxChange}
+              />
+            </div>
+            <div className={`${styles['enter-checkbox']} ${styles['design']}`}>
+              <input
+                type='checkbox'
+                name='design'
+                onChange={onCheckBoxChange}
+              />
+            </div>
+            {/* {checkList.forEach((value, key) => {
+              console.log(`${key} = ${value}`);
+              return (<div className={`${styles['enter-checkbox']} ${styles[key]}`} key={key}>
+                <input
+                  type='checkbox'
+                  name={key}
+                  onChange={onCheckBoxChange}
+                />
+              </div>
+              )
+
+            })} */}
           </div>
           <div className={`${styles['enter-box']} ${styles['ask']} ${styles['large']}`}>
             <textarea
