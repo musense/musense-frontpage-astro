@@ -9,7 +9,7 @@ const checkList = new Map([
   ['seo', { select: 0, alias: "SEO網站優化" }],
   ['design', { select: 0, alias: "數位形象設計" }],
 ])
-export default function ContactUs({emailProps}) {
+export default function ContactUs({ emailProps }) {
   // console.log(import.meta.env.MODE);
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -51,7 +51,7 @@ export default function ContactUs({emailProps}) {
   }
   function openModal(err) {
     if (err) {
-      setHeaderContent("Error")
+      setHeaderContent("資料錯誤")
       if (typeof err === 'string') {
         setBodyContent(err)
       } else {
@@ -99,68 +99,67 @@ export default function ContactUs({emailProps}) {
           className={styles['contact-us-form']}
           onSubmit={getFormData}
         >
-          <div className={`${styles['enter-box']} ${styles['company-name']}`}>
-            <input
-              type='text'
-              name='company-name'
-            />
-          </div>
-          <div className={`${styles['enter-box']} ${styles['name']}`}>
-            <input
-              type='text'
-              name='name'
-            />
-          </div>
-          <div className={`${styles['enter-box']} ${styles['phone']}`}>
-            <input
-              type='tel'
-              name='phone'
-            />
-          </div>
-          <div className={`${styles['enter-box']} ${styles['email']}`}>
-            <input
-              type='email'
-              name='email'
-            />
+
+          <div className={styles['left-form']}>
+
+            <div className={`${styles['enter-box']} ${styles['company-name']}`}>
+              <input
+                type='text'
+                name='company-name'
+              />
+            </div>
+            <div className={`${styles['enter-box']} ${styles['name']}`}>
+              <input
+                type='text'
+                name='name'
+              />
+            </div>
+            <div className={`${styles['enter-box']} ${styles['phone']}`}>
+              <input
+                type='tel'
+                name='phone'
+              />
+            </div>
+            <div className={`${styles['enter-box']} ${styles['email']}`}>
+              <input
+                type='email'
+                name='email'
+              />
+            </div>
           </div>
 
-          {/* <div className={`${styles['enter-box']} ${styles['contact']}`}>
-            <input
-              type='datetime-local'
-              name='contact'
-            />
-          </div> */}
-          <div className={`${styles['enter-checkbox-list']}`}>
+          <div className={styles['right-form']}>
 
-            <div className={`${styles['enter-checkbox']} ${styles['advertising']}`}>
-              <input
-                type='checkbox'
-                name='advertising'
-                onChange={onCheckBoxChange}
-              />
-            </div>
-            <div className={`${styles['enter-checkbox']} ${styles['socialMedia']}`}>
-              <input
-                type='checkbox'
-                name='socialMedia'
-                onChange={onCheckBoxChange}
-              />
-            </div>
-            <div className={`${styles['enter-checkbox']} ${styles['seo']}`}>
-              <input
-                type='checkbox'
-                name='seo'
-                onChange={onCheckBoxChange}
-              />
-            </div>
-            <div className={`${styles['enter-checkbox']} ${styles['design']}`}>
-              <input
-                type='checkbox'
-                name='design'
-                onChange={onCheckBoxChange}
-              />
-            </div>
-            {/* {checkList.forEach((value, key) => {
+            <div className={`${styles['enter-checkbox-list']}`}>
+              <div className={`${styles['enter-checkbox']} ${styles['advertising']}`}>
+                <input
+                  type='checkbox'
+                  name='advertising'
+                  onChange={onCheckBoxChange}
+                />
+              </div>
+              <div className={`${styles['enter-checkbox']} ${styles['socialMedia']}`}>
+                <input
+                  type='checkbox'
+                  name='socialMedia'
+                  onChange={onCheckBoxChange}
+                />
+              </div>
+              <div className={`${styles['enter-checkbox']} ${styles['seo']}`}>
+                <input
+                  type='checkbox'
+                  name='seo'
+                  onChange={onCheckBoxChange}
+                />
+              </div>
+              <div className={`${styles['enter-checkbox']} ${styles['design']}`}>
+                <input
+                  type='checkbox'
+                  name='design'
+                  onChange={onCheckBoxChange}
+                />
+              </div>
+              {/* {checkList.forEach((value, key) => {
               console.log(`${key} = ${value}`);
               return (<div className={`${styles['enter-checkbox']} ${styles[key]}`} key={key}>
                 <input
@@ -172,18 +171,21 @@ export default function ContactUs({emailProps}) {
               )
 
             })} */}
-          </div>
-          <div className={`${styles['enter-box']} ${styles['ask']} ${styles['large']}`}>
-            <textarea
-              type='text'
-              name='ask'
+            </div>
+
+            <div className={`${styles['enter-box']} ${styles['ask']} ${styles['large']}`}>
+              <textarea
+                type='text'
+                name='ask'
+              />
+            </div>
+            <button
+              title='send button'
+              className={styles['send-button']}
+              type='submit'
             />
           </div>
-          <button
-            title='send button'
-            className={styles['send-button']}
-            type='submit'
-          />
+
         </form>
       </div>
     </div>

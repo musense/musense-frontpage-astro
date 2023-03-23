@@ -1,6 +1,6 @@
 .logo {
   position: relative;
-  max-width: 27rem;
+  width: var(--logo-width);
   /* max-height: 68px; */
   display: block;
   background-size: contain;
@@ -11,15 +11,15 @@
   width: 100%;
 }
 /* tablets */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .logo {
     margin: 0 auto;
   }
 
   .logo.header {
-    width: 16rem;
+    --logo-width:16rem;
   }
   .logo.footer {
-    width: 16rem;
+    --logo-width:16rem;
   }
 }

@@ -5,19 +5,20 @@ import OurService from '@components/index/ourService';
 import ContactUs from '@components/index/contactUs';
 
 const env = import.meta.env;
+console.log('🚀 ~ file: index.astro:8 ~ env:', env);
 
 const emailProps: EmailProps = {
   service_key: env.EMAIL_SERVICE_KEY,
   template_key: env.EMAIL_TEMPLATE_KEY,
   public_key: env.EMAIL_PUBLIC_KEY,
 };
-console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
-
+console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
 ---
 
 <Layout
-  title={env.title}
-  description={env.description}
+  title={env.VITE_APP_TITLE}
+  description={env.VITE_APP_DESCRIPTION}
+  base={env.BASE_URL}
 >
   <About client:load />
   <OurService client:load />
@@ -33,28 +34,25 @@ console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
   }
   .bubble-box {
     position: relative;
-    margin: 3.5rem auto 0;
-    width: calc(100vw - 2rem);
+    margin: 240px auto 0;
+    width: clamp(70rem, 70rem + 23vw, 111rem);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .bubble-box > div {
     position: inherit;
     display: flex;
-    gap: 19rem;
+    flex-direction: row;
+    gap: 149px;
     width: fit-content;
   }
   .bubble-box > div:first-child {
-    flex-direction: column-reverse;
-    margin-left: 0;
+    align-self: flex-start;
   }
   .bubble-box > div:last-child {
-    flex-direction: column;
-    margin-right: 0;
-    margin-left: auto;
+    align-self: flex-end;
     top: -20px;
   }
-
   .orange-bubble-right,
   .orange-bubble-left {
     position: relative;
@@ -69,7 +67,6 @@ console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
     margin-left: 0;
     background-image: url(/assets/index/orangeBubble_left.png);
   }
-
   .blue-bubble-right,
   .blue-bubble-left {
     position: relative;
@@ -108,18 +105,12 @@ console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
     opacity: 1;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
+    .bubble-box {
+      width: 76vw;
+    }
     .bubble-box > div {
       gap: 10vw;
-    }
-    .bubble-box > div:first-child {
-      margin-left: 5vw;
-    }
-
-    .bubble-box > div:last-child {
-      margin-right: 5vw;
-      margin-left: auto;
-      top: -2vw;
     }
 
     .orange-bubble-right,
@@ -137,7 +128,7 @@ console.log("🚀 ~ file: index.astro:14 ~ emailProps:", emailProps)
     }
     .bubble-box-mobile {
       margin: 3.5rem auto 0;
-      width: calc(100dvw - 2rem);
+      width: calc(100% - 2rem);
       display: flex;
       flex-direction: row;
       justify-content: space-between;

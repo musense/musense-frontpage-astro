@@ -15,7 +15,7 @@ export default function Modal({
     const modalShowClassRef = useRef('hide')
     const modalHeaderClassRef = useRef('success')
 
-    modalHeaderClassRef.current = headerContent === 'Error' ? 'fail' : 'success'
+    modalHeaderClassRef.current = headerContent === '資料錯誤' ? 'fail' : 'success'
     modalShowClassRef.current = modalIsOpen ? 'show' : 'hide'
 
 

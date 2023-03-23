@@ -6,9 +6,10 @@ import FooterLayout from '@components/layout/footerLayout';
 export interface Props {
   title: string;
   description: string;
+  base: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, base } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,10 +20,11 @@ const { title, description } = Astro.props;
       name='viewport'
       content='width=device-width'
     />
+    <!-- type='image/svg+xml' -->
     <link
       rel='icon'
-      type='image/svg+xml'
-      href='/favicon.ico'
+      type='image/png'
+      href={`${base}favicon.ico`}
     />
     <meta
       name='generator'
@@ -33,19 +35,45 @@ const { title, description } = Astro.props;
       name='description'
       content={description}
     />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PQVK3G7');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body id='root'>
     <HeaderLayout client:load />
-    <ButtonLayout client:load />
+    <ButtonLayout client:media='(max-width: 768px)' />
     <slot />
 
     <FooterLayout client:idle />
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src='https://www.googletagmanager.com/ns.html?id=GTM-PQVK3G7'
+        height='0'
+        width='0'
+        style='display:none;visibility:hidden'
+      ></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
 
 <style is:global>
   html,
   body {
+    overflow-x: hidden;
     margin: 0;
   }
   @font-face {
@@ -57,12 +85,15 @@ const { title, description } = Astro.props;
     src: url(/assets/fonts/TaipeiSansTCBeta-Regular.ttf);
   }
   :root {
-    --n-header-height: -120px;
-    --header-height: 120px;
+    --logo-width: 27rem;
+
+    --n-header-height: -176px;
+    --header-height: 176px;
     --top-offset: calc(var(--header-height) + 282px - 186px);
-    --ourService-top: calc(var(--top-offset) + 95px);
+    /* --ourService-top: calc(var(--top-offset) + 95px); */
+    --ourService-top: 95px;
     --banner-top-offset: calc(var(--header-height) + 44px);
-    --contact-us-width: 1240px;
+
     --clamp-line: 3;
 
     --header-z-index: 99999;
@@ -86,8 +117,8 @@ const { title, description } = Astro.props;
   header {
     position: fixed;
     box-sizing: border-box;
-    max-width: 100%;
-    max-height: 12rem;
+    inset: 0;
+    height: var(--header-height);
     box-shadow: 0px 5px 3px 0px #eee;
     background-color: #fff;
     z-index: var(--header-z-index);
@@ -155,7 +186,8 @@ const { title, description } = Astro.props;
   }
 
   nav {
-    /* display: none; */
+    position: relative;
+    display: inline-block;
   }
   ul {
     position: relative;
@@ -172,7 +204,9 @@ const { title, description } = Astro.props;
     height: var(--header-btn-height);
   }
 
+  button,
   a {
+    padding: 0;
     position: relative;
     cursor: pointer;
     color: transparent;
@@ -230,7 +264,14 @@ const { title, description } = Astro.props;
   }
 
   .navbar-wrapper {
-    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 245px;
+    margin: 0 auto 22px;
   }
   /* @media (max-width: 1200px) {
 
@@ -241,12 +282,8 @@ const { title, description } = Astro.props;
     }
   } */
   /* desktops */
-  @media (max-width: 992px) {
-  }
-
-  /* tablets */
-  @media (max-width: 768px) {
-    html{
+  @media (max-width: 1200px) {
+    html {
       font-family: Openhuninn;
     }
     .hamburger {
@@ -256,13 +293,13 @@ const { title, description } = Astro.props;
       display: flex;
     } */
     header {
-      height: 12rem;
+      --header-height: 10rem;
     }
     header.hide {
-      top: calc(var(--n-header-height) - 5px - 3px);
+      --n-header-height: -10rem;
     }
-    header.show {
-      top: 0;
+    .navbar-wrapper {
+      width: 100%;
     }
     nav {
       position: absolute;
@@ -283,6 +320,7 @@ const { title, description } = Astro.props;
     nav.active {
       transform: scale(1);
     }
+
     ul {
       flex-direction: column;
       justify-content: space-evenly;
@@ -296,17 +334,6 @@ const { title, description } = Astro.props;
       --header-btn-height: 3.3rem;
       width: var(--header-btn-width);
       height: var(--header-btn-height);
-    }
-
-    .navbar-wrapper {
-      position: relative;
-      margin: 0 auto 22px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 245px;
     }
 
     nav ul li button:focus,

@@ -79,7 +79,7 @@ export default function HeaderLayout() {
                     </li>
                     <li>
                       <a
-                        // data-tooltip="敬請期待"
+                        data-tooltip="敬請期待"
                         className={`navBtn marketing`}
                       // href='marketing'
                       >

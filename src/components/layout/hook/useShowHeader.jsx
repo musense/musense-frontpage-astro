@@ -11,9 +11,9 @@ export default function useShowHeader() {
     }, [clientWidthRef]);
     const [showHeader, setShowHeader] = useState(true);
     useScrollPosition(({ prevPos, currPos }) => {
-        // console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ prevPos:", prevPos.y)
-        // console.log("🚀 ~ file: useShowHeader.jsx:22 ~ useScrollPosition ~ clientWidthRef.current:", clientWidthRef.current)
-        if (clientWidthRef.current < 768 && prevPos.y > 0) return
+        console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ prevPos:", prevPos.y)
+        console.log("🚀 ~ file: useShowHeader.jsx:22 ~ useScrollPosition ~ clientWidthRef.current:", clientWidthRef.current)
+        if (clientWidthRef.current < 768 && -prevPos.y < 100) return
         if (currPos.y >= prevPos.y) {
             setShowHeader(true);
         } else {
