@@ -82,22 +82,13 @@ const { title, description } = Astro.props;
     src: url(/fonts/TaipeiSansTCBeta-Regular.ttf) format('ttf');
   }
   :root {
- 
-
-    --n-header-height: -176px;
-    --header-height: 176px;
-    --top-offset: calc(var(--header-height) + 282px - 186px);
-    /* --ourService-top: calc(var(--top-offset) + 95px); */
+    
     --ourService-top: 95px;
     --banner-top-offset: calc(var(--header-height) + 44px);
-
     --clamp-line: 3;
-
     --header-z-index: 99999;
-
     --theme-color-hex: #f88d2a;
     --theme-color-rgb: 248, 141, 42;
-
     --header-btn-width: 11.5rem;
     --header-btn-height: 3.5rem;
   }
@@ -112,6 +103,7 @@ const { title, description } = Astro.props;
   }
 
   header {
+    --header-height: 136px;
     position: fixed;
     box-sizing: border-box;
     inset: 0;
@@ -127,6 +119,7 @@ const { title, description } = Astro.props;
   }
 
   header.hide {
+    --n-header-height: -136px;
     top: calc(var(--n-header-height) - 5px - 3px);
   }
   header.show {
