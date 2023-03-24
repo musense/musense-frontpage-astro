@@ -81,7 +81,7 @@
   gap: 85px;
 }
 .right-form {
-  gap: 69px;
+  gap: 76px;
 }
 .enter-box {
   --enter-box-height: 43px;
@@ -163,14 +163,11 @@ input:focus {
 .enter-checkbox-list {
   position: relative;
   width: 100%;
-
-  padding-left: 1.4rem;
   display: flex;
   flex-direction: column;
-
   box-sizing: border-box;
-  gap: 19px;
-  margin-top: -19px;
+  gap: 20px;
+  padding-top: 1rem;
 }
 
 .enter-checkbox {
@@ -232,7 +229,7 @@ input:focus {
   border: none;
   background-color: transparent;
   outline: none;
-  margin-top: 12px;
+  margin-top: -20px;
   align-self: flex-end;
   filter: drop-shadow(0px 5px 5px rgba(0 0 0 /0.5));
 }

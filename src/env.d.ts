@@ -1,4 +1,4 @@
-/// <reference types="astro/client" />
+/// <reference types="astro/client-image" />
 
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string

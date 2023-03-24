@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:uat": "astro build && mv ./robots-uat.txt dist/robots.txt",
+    "build:prod": "astro build && mv ./robots-production.txt dist/robots.txt",
     "preview": "astro preview",
     "serve": "serve dist -s",
     "build:serve": "astro build && serve dist -s"

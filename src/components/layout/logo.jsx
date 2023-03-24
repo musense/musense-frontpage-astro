@@ -12,6 +12,8 @@ export default function Logo({ color, position = "header" }) {
     className={`${styles['logo']} ${styles[position]}`}
     href="/"
   >
-    <img src={logo.src} alt="Musense Marketing" />
+    <img src={logo.src}
+    
+     alt="Musense Marketing" />
   </a>)
 }

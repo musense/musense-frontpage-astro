@@ -20,8 +20,10 @@
 .modal-wrapper {
   position: absolute;
   background-color: hsla(0, 0%, 100%, 1);
-  height: 230px;
-  width: 300px;
+  /* height: 230px;
+  width: 300px; */
+  max-height: clamp(230px, 230px + 1rem, 250px);
+  max-width: clamp(300px, 300px + 1rem , 400px);
   top: 50%;
   left: 50%;
   right: auto;
@@ -99,7 +101,7 @@
   line-height: 1.5;
   overflow: hidden;
   flex-grow: 3;
-  white-space: pre;
+  white-space: pre-wrap;
   overflow-y: auto;
 }
 
