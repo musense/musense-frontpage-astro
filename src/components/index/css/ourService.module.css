@@ -19,7 +19,7 @@
   position: relative;
   width: 100%;
   height: 50px;
-  background-image: url(/assets/index/ourService.png);
+  background-image: url(/assets/index/ourService.webp);
 }
 
 .service-box {
@@ -45,33 +45,33 @@
   display: block;
   width: 131px;
   height: 67px;
-  background-image: url(/assets/button/more.png);
+  background-image: url(/assets/button/more.webp);
   top: calc(27px + 100%);
   left: 50%;
   transform: translateX(-50%);
 }
 .service-box > div:hover::after {
   /* TODO: 正式需解除 */
-  /* background-image: url(/assets/button/more_h.png); */
+  /* background-image: url(/assets/button/more_h.webp); */
 }
 
 .advertising {
-  background-image: url(/assets/index/advertising.png);
+  background-image: url(/assets/index/advertising.webp);
 }
 .seo-service {
-  background-image: url(/assets/index/seoService.png);
+  background-image: url(/assets/index/seoService.webp);
 }
 .social-media {
-  background-image: url(/assets/index/socialMedia.png);
+  background-image: url(/assets/index/socialMedia.webp);
 }
 .cis {
-  background-image: url(/assets/index/cis.png);
+  background-image: url(/assets/index/cis.webp);
 }
 
 .why-musense {
   --why-musense-height: 719px;
   --why-musense-width: 100vw;
-  --why-musense-url: url(/assets/index/whyMusense.png);
+  --why-musense-url: url(/assets/index/whyMusense.webp);
   position: relative;
   margin: calc(258px - 78px) 0 0;
   height: var(--why-musense-height);
@@ -85,8 +85,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: var(--why-musense-width);
-  height: var(--why-musense-height);
+  max-width: var(--why-musense-width);
+  max-height: var(--why-musense-height);
 }
 
 @media (max-width: 1200px) and (min-width: 768px) {
@@ -101,11 +101,14 @@
   }
 
   .service-box {
-    column-gap: 10vw;
-    row-gap: 15vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80vw;
+    position: relative;
+    width: calc(15rem * 2 + 30vw);
+    margin: 2.8rem auto 0;
+    column-gap: 0rem;
+    row-gap: 16rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
   }
 
   .why-musense {
@@ -123,15 +126,14 @@
   }
   .our-service {
     position: relative;
-    width: calc(100% - 2.7rem);
+    width: 100%;
     height: 2.2rem;
     margin: 0 auto;
-    background-image: url(/assets/mobile/service/ourService.png);
+    background-image: url(/assets/mobile/service/ourService.webp);
   }
 
   .service-box {
-    position: relative;
-    width: 100%;
+    width: calc(15rem * 2 + 15vw);
     margin: 2.8rem auto 0;
     column-gap: 0rem;
     row-gap: 8.3rem;
@@ -154,7 +156,7 @@
     display: block;
     width: 9rem;
     height: 4.5rem;
-    background-image: url(/assets/mobile/service/more.png);
+    background-image: url(/assets/mobile/service/more.webp);
     top: calc(1.4rem + 100%);
     left: 50%;
     transform: translateX(-50%);
@@ -164,25 +166,25 @@
   }
   .service-box > div:hover::after {
     /* TODO: 正式需解除 */
-    /* background-image: url(/assets/button/more_h.png); */
+    /* background-image: url(/assets/button/more_h.webp); */
   }
 
   .advertising {
-    background-image: url(/assets/mobile/service/advertising.png);
+    background-image: url(/assets/mobile/service/advertising.webp);
   }
   .seo-service {
-    background-image: url(/assets/mobile/service/seoService.png);
+    background-image: url(/assets/mobile/service/seoService.webp);
   }
   .social-media {
-    background-image: url(/assets/mobile/service/socialMedia.png);
+    background-image: url(/assets/mobile/service/socialMedia.webp);
   }
   .cis {
-    background-image: url(/assets/mobile/service/cis.png);
+    background-image: url(/assets/mobile/service/cis.webp);
   }
 
   .why-musense {
     margin-top: 7rem;
     --why-musense-height: 33rem;
-    --why-musense-url:url(/assets/mobile/service/whyMusense.png)
+    --why-musense-url: url(/assets/mobile/service/whyMusense.webp);
   }
 }

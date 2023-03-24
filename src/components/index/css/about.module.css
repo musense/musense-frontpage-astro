@@ -23,7 +23,7 @@
   position: absolute;
   max-height: 907px;
   inset: 0 -1px;
-  background-image: url(/assets/index/bg.png);
+  background-image: url(/assets/index/bg.webp);
   top: 186px;
 }
 
@@ -40,21 +40,21 @@
   position: relative;
   width: 509px;
   height: 200px;
-  background-image: url(/assets/index/slogan.png);
+  background-image: url(/assets/index/slogan.webp);
 }
 
 .top-image {
   position: relative;
   width: 497px;
   height: 391px;
-  background-image: url(/assets/index/topImage.png);
+  background-image: url(/assets/index/topImage.webp);
 }
 .welcome {
   position: relative;
   width: 1138px;
   height: 27px;
   margin: 241px auto 0;
-  background-image: url(/assets/index/welcome.png);
+  background-image: url(/assets/index/welcome.webp);
 }
 
 .musense-can-help {
@@ -62,7 +62,7 @@
   width: 266px;
   height: 66px;
   margin: 134px auto 0;
-  background-image: url(/assets/index/musenseCanHelp.png);
+  background-image: url(/assets/index/musenseCanHelp.webp);
 }
 
 .reply {
@@ -70,7 +70,7 @@
   width: 832px;
   height: 74px;
   margin: 47px auto 0;
-  background-image: url(/assets/index/reply.png);
+  background-image: url(/assets/index/reply.webp);
   width: clamp(70rem, 70rem + 7vw, 832px);
 }
 
@@ -93,11 +93,11 @@
 .triangle-range-orange-right {
   margin-left: auto;
   margin-right: 0;
-  background-image: url(/assets/index/triangleRangeOrange_right.png);
+  background-image: url(/assets/index/triangleRangeOrange_right.webp);
 }
 .triangle-range-orange-left {
   margin-left: 0;
-  background-image: url(/assets/index/triangleRangeOrange_left.png);
+  background-image: url(/assets/index/triangleRangeOrange_left.webp);
 }
 @media (max-width: 1200px) {
   .about-us {
@@ -109,7 +109,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .welcome{
+  .welcome {
     margin-top: 40px;
     width: 90vw;
   }
@@ -131,11 +131,11 @@
     height: 2.8rem;
     margin: 0 auto;
     position: relative;
-    background-image: url(/assets/mobile/about/slogan.png);
+    background-image: url(/assets/mobile/about/slogan.webp);
   }
   .slogan::after {
     content: '';
-    background-image: url(/assets/mobile/about/slogan2.png);
+    background-image: url(/assets/mobile/about/slogan2.webp);
     display: block;
     position: relative;
     width: 16rem;
@@ -151,12 +151,12 @@
     height: 23rem;
     width: 29rem;
     margin: 0 auto;
-    background-image: url(/assets/mobile/about/topImage.png);
+    background-image: url(/assets/mobile/about/topImage.webp);
   }
   .bg {
-    background-image: url(/assets/mobile/about/top_bg_decorate.png);
+    background-image: url(/assets/mobile/about/top_bg_decorate.webp);
     width: calc(114rem / 3);
-    height: calc(39rem / 3);
+    height: calc(39rem / 3); 
     top: 0;
   }
 
@@ -165,18 +165,18 @@
     width: calc(100% - 1.6rem);
     height: 1.4rem;
     margin: 11rem auto 0;
-    background-image: url(/assets/mobile/about/welcome.png);
+    background-image: url(/assets/mobile/about/welcome.webp);
   }
   .musense-can-help {
     position: relative;
     width: 19rem;
     height: 2rem;
     margin: 8rem auto 0;
-    background-image: url(/assets/mobile/about/musenseCanHelp_ch.png);
+    background-image: url(/assets/mobile/about/musenseCanHelp_ch.webp);
   }
   .musense-can-help::after {
     content: '';
-    background-image: url(/assets/mobile/about/musenseCanHelp_en.png);
+    background-image: url(/assets/mobile/about/musenseCanHelp_en.webp);
     display: block;
     position: absolute;
     width: 16rem;
@@ -194,7 +194,7 @@
     width: 36rem;
     height: 2rem;
     margin: 9rem auto 0;
-    background-image: url(/assets/mobile/about/reply.png);
+    background-image: url(/assets/mobile/about/reply.webp);
   }
 
   .reply::before,
@@ -212,19 +212,19 @@
     width: 11rem;
     height: 3rem;
     bottom: 4rem;
-    background-image: url(/assets/mobile/about/deco_orange.png);
+    background-image: url(/assets/mobile/about/deco_orange.webp);
   }
   .reply::after {
     width: 35rem;
     height: 1rem;
     top: 2.6rem;
-    background-image: url(/assets/mobile/about/reply_sub.png);
+    background-image: url(/assets/mobile/about/reply_sub.webp);
   }
 
   .triangle-box {
     position: relative;
     display: block;
-    background-image: url(/assets/mobile/about/deco_blue.png);
+    background-image: url(/assets/mobile/about/deco_blue.webp);
     width: calc(110rem / 3);
     height: calc(39rem / 3);
     margin: unset;

@@ -78,12 +78,18 @@ export default function HeaderLayout() {
                       />
                     </li>
                     <li>
-                      <a
+                      <button
                         data-tooltip="敬請期待"
                         className={`navBtn marketing`}
                       // href='marketing'
                       >
-                        marketing</a>
+                        marketing</button>
+                      {/* <a
+                        data-tooltip="敬請期待"
+                        className={`navBtn marketing`}
+                      // href='marketing'
+                      >
+                        marketing</a> */}
                     </li>
                   </ul>
                 )}
@@ -110,10 +116,14 @@ export default function HeaderLayout() {
                       />
                     </li>
                     <li>
-                      <a
+                      <button
                         className={`navBtn marketing`}
-                        href='marketing'
-                      >marketing</a>
+                        // href='marketing'
+                      >marketing</button>
+                      {/* <a
+                        className={`navBtn marketing`}
+                        // href='marketing'
+                      >marketing</a> */}
                     </li>
                   </ul>
                 )}

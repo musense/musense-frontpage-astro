@@ -18,13 +18,12 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
 <Layout
   title={env.VITE_APP_TITLE}
   description={env.VITE_APP_DESCRIPTION}
-  base={env.BASE_URL}
 >
   <About client:load />
-  <OurService client:load />
+  <OurService client:visible />
   <ContactUs
     emailProps={emailProps}
-    client:load
+    client:visible
   />
 </Layout>
 
@@ -61,11 +60,11 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
   }
   .orange-bubble-right {
     margin-right: 0;
-    background-image: url(/assets/index/orangeBubble_right.png);
+    background-image: url(/assets/index/orangeBubble_right.webp);
   }
   .orange-bubble-left {
     margin-left: 0;
-    background-image: url(/assets/index/orangeBubble_left.png);
+    background-image: url(/assets/index/orangeBubble_left.webp);
   }
   .blue-bubble-right,
   .blue-bubble-left {
@@ -75,11 +74,11 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
   }
   .blue-bubble-right {
     margin-left: auto;
-    background-image: url(/assets/index/blueBubble_right.png);
+    background-image: url(/assets/index/blueBubble_right.webp);
   }
   .blue-bubble-left {
     margin-left: auto;
-    background-image: url(/assets/index/blueBubble_left.png);
+    background-image: url(/assets/index/blueBubble_left.webp);
   }
   [data-aos='orange-slide-left'],
   [data-aos='blue-slide-left'] {
@@ -155,17 +154,17 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
       height: 16.5rem;
     }
     .orange-bubble-product {
-      background-image: url(/assets/mobile/about/orangeBubble_product.png);
+      background-image: url(/assets/mobile/about/orangeBubble_product.webp);
     }
 
     .orange-bubble-view {
-      background-image: url(/assets/mobile/about/orangeBubble_view.png);
+      background-image: url(/assets/mobile/about/orangeBubble_view.webp);
     }
     .blue-bubble-time {
-      background-image: url(/assets/mobile/about/blueBubble_time.png);
+      background-image: url(/assets/mobile/about/blueBubble_time.webp);
     }
     .blue-bubble-seo {
-      background-image: url(/assets/mobile/about/blueBubble_seo.png);
+      background-image: url(/assets/mobile/about/blueBubble_seo.webp);
     }
     .orange-bubble-product::after,
     .orange-bubble-view::after,
@@ -176,28 +175,28 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
       position: relative;
       width: 14rem;
       height: 14rem;
-      background-image: url(/assets/mobile/about/productImage.png);
+      background-image: url(/assets/mobile/about/productImage.webp);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
     }
     .orange-bubble-product::after {
-      background-image: url(/assets/mobile/about/productImage.png);
+      background-image: url(/assets/mobile/about/productImage.webp);
       margin-top: 1.3rem;
       margin-left: 21rem;
     }
     .orange-bubble-view::after {
-      background-image: url(/assets/mobile/about/viewImage.png);
+      background-image: url(/assets/mobile/about/viewImage.webp);
       margin-top: 1.3rem;
       margin-left: 20.5rem;
     }
     .blue-bubble-time::after {
-      background-image: url(/assets/mobile/about/timeImage.png);
+      background-image: url(/assets/mobile/about/timeImage.webp);
       margin-top: 3rem;
       left: -12rem;
     }
     .blue-bubble-seo::after {
-      background-image: url(/assets/mobile/about/seoImage.png);
+      background-image: url(/assets/mobile/about/seoImage.webp);
       margin-top: 2.8rem;
       left: -12rem;
     }

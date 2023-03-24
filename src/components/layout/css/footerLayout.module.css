@@ -75,12 +75,12 @@
   position: relative;
   width: 100%;
   height: 44px;
-  background-image: url(/assets/contactUsDown.png);
+  background-image: url(/assets/contactUsDown.webp);
   /* background-position: left !important; */
   /* cursor: pointer; */
 }
 /* .contact-us-btn:hover {
-  background-image: url(/assets/button/contactButton_h.png);
+  background-image: url(/assets/button/contactButton_h.webp);
 } */
 
 .social-btn-box {
@@ -98,16 +98,16 @@
   cursor: pointer;
 }
 .fb-icon {
-  background-image: url(/assets/FBIcon.png);
+  background-image: url(/assets/FBIcon.webp);
 }
 .ig-icon {
-  background-image: url(/assets/IGIcon.png);
+  background-image: url(/assets/IGIcon.webp);
 }
 .ms-icon {
-  background-image: url(/assets/MSIcon.png);
+  background-image: url(/assets/MSIcon.webp);
 }
 .mail-icon {
-  background-image: url(/assets/MailIcon.png);
+  background-image: url(/assets/MailIcon.webp);
 }
 .aa {
   font-size: 22px;
@@ -146,7 +146,7 @@
   .footer-wrapper {
     margin-top: 5.3rem;
     height: 29.8rem;
-    background-image: url(/assets/mobile/footer/footer.png);
+    background-image: url(/assets/mobile/footer/footer.webp);
   }
   .footer-box {
     width: calc(100% - 3.6rem);
@@ -187,7 +187,7 @@
   .contact-us-btn {
     width: 11.6rem;
     height: 4rem;
-    background-image: url(/assets/mobile/footer/contactUsDown.png);
+    background-image: url(/assets/mobile/footer/contactUsDown.webp);
   }
   .social-btn-box {
     width: unset;
@@ -201,10 +201,10 @@
     cursor: pointer;
   }
   .fb-icon {
-    background-image: url(/assets/mobile/footer/FBIcon.png);
+    background-image: url(/assets/mobile/footer/FBIcon.webp);
   }
   .ig-icon {
-    background-image: url(/assets/mobile/footer/IGIcon.png);
+    background-image: url(/assets/mobile/footer/IGIcon.webp);
   }
   .copyright {
     text-align: center;

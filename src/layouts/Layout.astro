@@ -2,14 +2,12 @@
 import HeaderLayout from '@components/layout/headerLayout';
 import ButtonLayout from '@components/layout/buttonLayout';
 import FooterLayout from '@components/layout/footerLayout';
-
 export interface Props {
   title: string;
   description: string;
-  base: string;
 }
 
-const { title, description, base } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,11 +18,10 @@ const { title, description, base } = Astro.props;
       name='viewport'
       content='width=device-width'
     />
-    <!-- type='image/svg+xml' -->
     <link
       rel='icon'
-      type='image/png'
-      href={`${base}favicon.ico`}
+      type='image/svg+xml'
+      href={`/favicon.ico`}
     />
     <meta
       name='generator'
@@ -78,14 +75,14 @@ const { title, description, base } = Astro.props;
   }
   @font-face {
     font-family: Openhuninn;
-    src: url(/assets/fonts/jf-openhuninn-2.0.ttf);
+    src: url(/fonts/jf-openhuninn-2.0.ttf) format('ttf');
   }
   @font-face {
     font-family: TaipeiSansTCBeta;
-    src: url(/assets/fonts/TaipeiSansTCBeta-Regular.ttf);
+    src: url(/fonts/TaipeiSansTCBeta-Regular.ttf) format('ttf');
   }
   :root {
-    --logo-width: 27rem;
+ 
 
     --n-header-height: -176px;
     --header-height: 176px;
@@ -251,16 +248,16 @@ const { title, description, base } = Astro.props;
     outline: none;
   }
   .about {
-    background-image: url(/assets/about.png);
+    background-image: url(/assets/about.webp);
   }
   .service {
-    background-image: url(/assets/service.png);
+    background-image: url(/assets/service.webp);
   }
   .contact {
-    background-image: url(/assets/contact.png);
+    background-image: url(/assets/contact.webp);
   }
   .marketing {
-    background-image: url(/assets/marketing.png);
+    background-image: url(/assets/marketing.webp);
   }
 
   .navbar-wrapper {
@@ -308,7 +305,7 @@ const { title, description, base } = Astro.props;
       top: 6.6rem;
       width: 20.2rem;
       height: 34rem;
-      background-image: url(/assets/mobile/header/menu_bg.png);
+      background-image: url(/assets/mobile/header/menu_bg.webp);
       transition: transform 0.2s ease-in-out;
       background-size: contain;
       background-repeat: no-repeat;
@@ -342,16 +339,16 @@ const { title, description, base } = Astro.props;
     }
 
     .about {
-      background-image: url(/assets/mobile/header/about.png);
+      background-image: url(/assets/mobile/header/about.webp);
     }
     .service {
-      background-image: url(/assets/mobile/header/service.png);
+      background-image: url(/assets/mobile/header/service.webp);
     }
     .contact {
-      background-image: url(/assets/mobile/header/contact.png);
+      background-image: url(/assets/mobile/header/contact.webp);
     }
     .marketing {
-      background-image: url(/assets/mobile/header/marketing.png);
+      background-image: url(/assets/mobile/header/marketing.webp);
     }
 
     .btn-wrapper {
@@ -386,13 +383,13 @@ const { title, description, base } = Astro.props;
       outline: none;
     }
     .fb-btn {
-      background-image: url(/assets/mobile/header/fb.png);
+      background-image: url(/assets/mobile/header/fb.webp);
     }
     .ig-btn {
-      background-image: url(/assets/mobile/header/ig.png);
+      background-image: url(/assets/mobile/header/ig.webp);
     }
     .email-btn {
-      background-image: url(/assets/mobile/header/email.png);
+      background-image: url(/assets/mobile/header/email.webp);
     }
   }
 </style>

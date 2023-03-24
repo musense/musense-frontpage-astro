@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 export default function About() {
 
   useEffect(() => {
+
     AOS.init({
       offset: 120,
       delay: 50, // values from 0 to 3000, with step 50ms
@@ -71,7 +72,7 @@ export default function About() {
           />
         </div>
       </div>
-      
+
       <div className={styles['musense-can-help']} />
       <div className={styles['reply']} />
       <div className={styles['triangle-box']}>

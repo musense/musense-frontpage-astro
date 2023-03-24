@@ -1,19 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import useClientWindowWidth from './useClientWindowWidth';
 export default function useShowHeader() {
 
-    const clientWidthRef = useRef(null)
-
-    useEffect(() => {
-        if (clientWidthRef.current == null) {
-            clientWidthRef.current =window.innerWidth
-        }
-    }, [clientWidthRef]);
+    const clientWindowWidth = useClientWindowWidth()
     const [showHeader, setShowHeader] = useState(true);
     useScrollPosition(({ prevPos, currPos }) => {
-        console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ prevPos:", prevPos.y)
-        console.log("🚀 ~ file: useShowHeader.jsx:22 ~ useScrollPosition ~ clientWidthRef.current:", clientWidthRef.current)
-        if (clientWidthRef.current < 768 && -prevPos.y < 100) return
+        // console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ prevPos:", prevPos.y)
+        // console.log("🚀 ~ file: useShowHeader.jsx:22 ~ useScrollPosition ~ clientWindowWidth:", clientWindowWidth)
+        if (clientWindowWidth < 768 && -prevPos.y < 100) return
         if (currPos.y >= prevPos.y) {
             setShowHeader(true);
         } else {
