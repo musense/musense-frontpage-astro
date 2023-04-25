@@ -21,7 +21,10 @@ export default function About() {
     <div className={styles['about-us']}>
       <div className={styles['bg']} />
       <div id='about' className={styles['about-box']}>
-        <div className={styles['slogan']} />
+        <div className={styles['slogan']} >
+          <div className={styles['text-zhtw']}>傾聽陌聲、傳遞陌生</div>
+          <div className={styles['text-en']}>We listen. We care. We transmit.</div>
+        </div>
         <div className={styles['top-image']} />
       </div>
 

@@ -15,5 +15,8 @@ export default defineConfig({
     viteCompression({
       threshold: 512000 // 對大於 512kb 的文件進行壓縮
     })
-  ]
+  ],
+  server: {
+    host: true
+  }
 });
