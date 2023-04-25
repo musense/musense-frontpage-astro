@@ -53,7 +53,8 @@ export default function ContactUs({ emailProps }) {
     if (err) {
       setHeaderContent("資料錯誤")
       if (typeof err === 'string') {
-        setBodyContent(err)
+        const errorMessage = '「請填寫完整欄位資訊後再點擊送出」';
+        setBodyContent(errorMessage)
       } else {
         setBodyContent('出了點問題，請稍後再試！')
       }

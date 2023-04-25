@@ -23,7 +23,7 @@
   /* height: 230px;
   width: 300px; */
   max-height: clamp(230px, 230px + 1rem, 250px);
-  max-width: clamp(300px, 300px + 1rem , 400px);
+  max-width: clamp(300px, 340px + 1rem , 400px);
   top: 50%;
   left: 50%;
   right: auto;
