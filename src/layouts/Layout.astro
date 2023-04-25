@@ -52,7 +52,7 @@ const { title, description } = Astro.props;
     <ButtonLayout client:media='(max-width: 768px)' />
     <slot />
 
-    <FooterLayout client:idle />
+    <FooterLayout client:load />
 
     <!-- Google Tag Manager (noscript) -->
     <noscript
