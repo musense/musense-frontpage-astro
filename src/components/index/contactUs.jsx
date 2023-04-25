@@ -19,9 +19,9 @@ export default function ContactUs({ emailProps }) {
   function getAskString(checkList) {
     let askString = '';
     for (const { select, alias } of checkList.values()) {
-      select === 1 && (askString += `${alias},`)
+      select === 1 && (askString += `${alias}/`)
     }
-    return askString.lastIndexOf(",") === askString.length - 1 && (askString = askString.slice(0, -1))
+    return askString.lastIndexOf("/") === askString.length - 1 && (askString = askString.slice(0, -1))
   }
   function getFormData(e) {
     e.preventDefault();
