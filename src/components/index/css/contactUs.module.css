@@ -2,6 +2,7 @@
   position: relative;
   margin-top: 122px;
 }
+
 /* .contact-us-wrapper > div,
 .contact-us-wrapper * button,
 .contact-us-wrapper
@@ -11,12 +12,9 @@
   background-position: center;
   background-size: auto 100%;
 } */
-.contact-us-wrapper
-  :where(
-    > div,
-    * button,
-    * div:not([class$='content']):not([class$='wrapper']):not([class$='form'])
-  ) {
+.contact-us-wrapper :where(> div,
+  * button,
+  * div:not([class$='content']):not([class$='wrapper']):not([class$='form'])) {
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
@@ -39,6 +37,7 @@
   /* justify-content: space-between; */
   gap: 76px;
 }
+
 .img-wrapper {
   position: relative;
   width: 516px;
@@ -55,6 +54,7 @@
   height: 494px;
   background-image: url(/assets/index/image_down.webp);
 }
+
 .orange-box {
   position: relative;
   width: 335px;
@@ -72,17 +72,21 @@
   flex-direction: row;
   gap: 76px;
 }
+
 .left-form,
 .right-form {
   display: flex;
   flex-direction: column;
 }
+
 .left-form {
   gap: 85px;
 }
+
 .right-form {
   gap: 76px;
 }
+
 .enter-box {
   --enter-box-height: 43px;
   position: relative;
@@ -104,6 +108,7 @@ input {
   font-size: 16px;
   line-height: 1.2;
 }
+
 textarea,
 textarea:focus,
 input,
@@ -137,6 +142,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .enter-box.company-name::before {
   background-image: url(/assets/mobile/contact/companyName.webp);
 }
@@ -148,9 +154,11 @@ input:focus {
 .enter-box.name:before {
   background-image: url(/assets/index/name.webp);
 }
+
 .enter-box.phone:before {
   background-image: url(/assets/index/phone.webp);
 }
+
 .enter-box.email:before {
   background-image: url(/assets/index/email.webp);
 }
@@ -158,6 +166,24 @@ input:focus {
 .enter-box.large {
   --enter-box-height: 181px;
   background-image: url(/assets/mobile/contact/enterBox_large.webp);
+}
+
+
+.enter-checkbox {
+  position: relative;
+  height: 2.5rem;
+  width: 2.5rem;  
+  background-image: url(/assets/mobile/contact/box.webp);
+}
+input[type='checkbox']{
+  padding: unset;
+  margin: unset;
+  appearance: none;
+}
+input[type='checkbox']:checked{
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: var(--theme-color-hex);
 }
 
 .enter-checkbox-list {
@@ -170,20 +196,7 @@ input:focus {
   padding-top: 1rem;
 }
 
-.enter-checkbox {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-image: url(/assets/mobile/contact/box.webp);
-}
-.enter-checkbox > input {
-  padding: unset;
-  margin: unset;
-  appearance: none;
-}
-.enter-checkbox:has(input[type='checkbox']:checked) {
-  background-color: var(--theme-color-hex);
-}
+
 .enter-checkbox-list::before,
 .enter-checkbox::before {
   content: '';
@@ -194,6 +207,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .enter-checkbox-list::before {
   top: -3.2rem;
   left: 0;
@@ -201,24 +215,30 @@ input:focus {
   height: 2.5rem;
   background-image: url(/assets/mobile/contact/need.webp);
 }
+
 .enter-checkbox::before {
   top: 0;
   left: 4rem;
   height: 2.5rem;
   width: 12rem;
 }
+
 .enter-checkbox.advertising::before {
   background-image: url(/assets/mobile/contact/advertising.webp);
 }
+
 .enter-checkbox.socialMedia::before {
   background-image: url(/assets/mobile/contact/social.webp);
 }
+
 .enter-checkbox.seo::before {
   background-image: url(/assets/mobile/contact/seo.webp);
 }
+
 .enter-checkbox.design::before {
   background-image: url(/assets/mobile/contact/design.webp);
 }
+
 .send-button {
   position: relative;
   padding: 0;
@@ -246,6 +266,7 @@ input:focus {
   cursor: pointer;
   padding: unset;
 }
+
 .modal-close:checked {
   border: 1px solid red;
 }
@@ -254,9 +275,11 @@ input:focus {
   .contact-us-content {
     justify-content: center;
   }
+
   .contact-us-form {
     flex-direction: column;
   }
+
   .contact-us {
     width: 100vw;
     height: 5vw;
@@ -268,13 +291,16 @@ input:focus {
     flex-direction: column;
     align-items: center;
   }
+
   .contact-us-form {
     align-items: center;
     gap: 85px;
   }
+
   .img-wrapper {
     height: 512px;
   }
+
   .orange-box {
     display: none;
   }
@@ -288,10 +314,12 @@ input:focus {
   .send-button {
     margin: 0;
   }
+
   .contact-us-wrapper {
     margin-top: 4rem;
     overflow-x: hidden;
   }
+
   .contact-us {
     position: relative;
     width: calc(100% - 2.7rem);
@@ -299,10 +327,12 @@ input:focus {
     margin: 0 auto;
     background-image: url(/assets/mobile/contact/contactUs.webp);
   }
+
   .contact-us-content {
     flex-direction: column;
     gap: 5.5rem;
   }
+
   .img-wrapper {
     margin: 0;
     width: 100%;
@@ -310,12 +340,14 @@ input:focus {
     gap: 2.8rem;
     align-items: center;
   }
+
   .image-down {
     position: relative;
     width: 25rem;
     height: 18rem;
     background-image: url(/assets/mobile/contact/image_down.webp);
   }
+
   .orange-box {
     position: relative;
     display: block;
@@ -336,6 +368,7 @@ input:focus {
   .right-form {
     gap: 44px;
   }
+
   textarea,
   input {
     height: 100%;
@@ -344,11 +377,13 @@ input:focus {
     font-size: 1.6rem;
     line-height: 1.2;
   }
+
   .enter-box {
     --enter-box-height: 3.1rem;
     font-size: 1.6rem;
     background-size: cover;
   }
+
   .enter-box::before {
     --contact-us-label-height: 2rem;
     content: '';
@@ -361,15 +396,19 @@ input:focus {
     background-repeat: no-repeat;
     background-size: contain;
   }
+
   .enter-box.company-name::before {
     background-image: url(/assets/mobile/contact/companyName.webp);
   }
+
   .enter-box.name::before {
     background-image: url(/assets/mobile/contact/name.webp);
   }
+
   .enter-box.phone::before {
     background-image: url(/assets/mobile/contact/phone.webp);
   }
+
   .enter-box.email::before {
     --contact-us-label-height: 1.6rem;
     background-image: url(/assets/mobile/contact/email.webp);
@@ -399,18 +438,21 @@ input:focus {
 
   .enter-checkbox {
     position: relative;
-    width: 2.5rem;
     height: 2.5rem;
+    width: 2.5rem;  
     background-image: url(/assets/mobile/contact/box.webp);
   }
-  .enter-checkbox > input {
+  input[type='checkbox']{
     padding: unset;
     margin: unset;
     appearance: none;
   }
-  .enter-checkbox:has(input[type='checkbox']:checked) {
+  input[type='checkbox']:checked{
+    border: 1px solid black;
+    border-radius: 3px;
     background-color: var(--theme-color-hex);
   }
+
   .enter-checkbox-list::before,
   .enter-checkbox::before {
     content: '';
@@ -421,6 +463,7 @@ input:focus {
     background-repeat: no-repeat;
     background-size: contain;
   }
+
   .enter-checkbox-list::before {
     top: -3.2rem;
     left: 0;
@@ -428,24 +471,30 @@ input:focus {
     height: 2.5rem;
     background-image: url(/assets/mobile/contact/need.webp);
   }
+
   .enter-checkbox::before {
     top: 0;
     left: 4rem;
     height: 2.5rem;
     width: 12rem;
   }
+
   .enter-checkbox.advertising::before {
     background-image: url(/assets/mobile/contact/advertising.webp);
   }
+
   .enter-checkbox.socialMedia::before {
     background-image: url(/assets/mobile/contact/social.webp);
   }
+
   .enter-checkbox.seo::before {
     background-image: url(/assets/mobile/contact/seo.webp);
   }
+
   .enter-checkbox.design::before {
     background-image: url(/assets/mobile/contact/design.webp);
   }
+
   .send-button {
     position: relative;
     width: 11.5rem;
