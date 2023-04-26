@@ -2,7 +2,7 @@
   position: relative;
   bottom: 0;
   height: 298px;
-  background-image: url(/assets/footer.jpg);
+  background-image: url(/assets/mobile/footer/footer.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -75,12 +75,12 @@
   position: relative;
   width: 100%;
   height: 44px;
-  background-image: url(/assets/contactUsDown.webp);
+  background-image: url(/assets/mobile/footer/contactUsDown.webp);
   /* background-position: left !important; */
   /* cursor: pointer; */
 }
 /* .contact-us-btn:hover {
-  background-image: url(/assets/button/contactButton_h.webp);
+  background-image: url(/assets/mobile/footer/button/contactButton_h.webp);
 } */
 
 .social-btn-box {
@@ -98,16 +98,16 @@
   cursor: pointer;
 }
 .fb-icon {
-  background-image: url(/assets/FBIcon.webp);
+  background-image: url(/assets/mobile/footer/FBIcon.webp);
 }
 .ig-icon {
-  background-image: url(/assets/IGIcon.webp);
+  background-image: url(/assets/mobile/footer/IGIcon.webp);
 }
 .ms-icon {
-  background-image: url(/assets/MSIcon.webp);
+  background-image: url(/assets/mobile/footer/MSIcon.webp);
 }
 .mail-icon {
-  background-image: url(/assets/MailIcon.webp);
+  background-image: url(/assets/mobile/footer/MailIcon.webp);
 }
 .aa {
   font-size: 22px;
@@ -119,7 +119,7 @@
   .footer-wrapper {
     width: 100vw;
     height: 338px;
-    background-image: url(/assets/footer.jpg);
+    background-image: url(/assets/mobile/footer/footer.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
