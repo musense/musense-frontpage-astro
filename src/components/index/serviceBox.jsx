@@ -6,7 +6,7 @@ export default function ServiceBox() {
       <div className={styles['advertising']}>
         <div className={styles['service-header']}>
           <div>廣告投放代理</div>
-          <div>Advertising Agency</div>
+          <div>Advertising<br />Agency</div>
         </div>
         <div className={styles['service-body']}>
           <div>數位媒禮採購</div>
@@ -42,7 +42,7 @@ export default function ServiceBox() {
       <div className={styles['cis']}>
         <div className={styles['service-header']}>
           <div>數位形象設計</div>
-          <div>Digital Image Design</div>
+          <div>Digital Image<br />Design</div>
         </div>
         <div className={styles['service-body']}>
           <div>品牌視覺設計</div>
