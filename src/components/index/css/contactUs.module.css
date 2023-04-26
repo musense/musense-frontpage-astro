@@ -175,12 +175,12 @@ input:focus {
   width: 2.5rem;  
   background-image: url(/assets/mobile/contact/box.webp);
 }
-input[type='checkbox']{
+.enter-checkbox > input[type='checkbox']{
   padding: unset;
   margin: unset;
   appearance: none;
 }
-input[type='checkbox']:checked{
+.enter-checkbox > input[type='checkbox']:checked{
   border: 1px solid black;
   border-radius: 3px;
   background-color: var(--theme-color-hex);
@@ -442,12 +442,12 @@ input[type='checkbox']:checked{
     width: 2.5rem;  
     background-image: url(/assets/mobile/contact/box.webp);
   }
-  input[type='checkbox']{
+  .enter-checkbox > input[type='checkbox']{
     padding: unset;
     margin: unset;
     appearance: none;
   }
-  input[type='checkbox']:checked{
+  .enter-checkbox > input[type='checkbox']:checked{
     border: 1px solid black;
     border-radius: 3px;
     background-color: var(--theme-color-hex);

@@ -125,54 +125,6 @@ const { title, description } = Astro.props;
     top: 0;
   }
 
-  .hamburger {
-    --hamburger-height: 2.5rem;
-    --hamburger-width: 2.3rem;
-    position: absolute;
-    bottom: 2.2rem;
-    right: 3.2rem;
-    width: var(--hamburger-width);
-    height: var(--hamburger-height);
-    flex-direction: column;
-    justify-content: space-between;
-    display: none;
-    z-index: calc(var(--header-z-index) + 1);
-  }
-
-  .hamburger > input {
-    position: absolute;
-    appearance: none;
-    margin: unset;
-    padding: unset;
-    width: var(--hamburger-width);
-    height: var(--hamburger-height);
-    cursor: pointer;
-    z-index: 1;
-  }
-  .hamburger > span {
-    display: block;
-    width: calc(var(--hamburger-width) - 0.2rem);
-    height: 0.1rem;
-    background-color: var(--theme-color-hex);
-    border: 0.1rem solid var(--theme-color-hex);
-    border-radius: 1rem;
-    z-index: 0;
-  }
-  input[name='hamburger-check']:checked ~ span:nth-child(3) {
-    opacity: 0;
-  }
-  input[name='hamburger-check']:checked ~ span:nth-child(2) {
-    width: calc(calc(var(--hamburger-width) - 0.2rem) * 1.414);
-    transform-origin: top left;
-    transform: rotate(45deg);
-    /* transform: translateY(1.15rem) rotate(-45deg); */
-  }
-  input[name='hamburger-check']:checked ~ span:nth-child(4) {
-    width: calc(calc(var(--hamburger-width) - 0.2rem) * 1.414);
-    transform-origin: bottom left;
-    transform: rotate(-45deg);
-    /* transform: translateY(-1.15rem) rotate(45deg); */
-  }
 
   nav {
     position: relative;
@@ -240,16 +192,16 @@ const { title, description } = Astro.props;
     outline: none;
   }
   .about {
-    background-image: url(/assets/about.webp);
+    background-image: url(/assets/menu/about.webp);
   }
   .service {
-    background-image: url(/assets/service.webp);
+    background-image: url(/assets/menu/service.webp);
   }
   .contact {
-    background-image: url(/assets/contact.webp);
+    background-image: url(/assets/menu/contact.webp);
   }
   .marketing {
-    background-image: url(/assets/marketing.webp);
+    background-image: url(/assets/menu/marketing.webp);
   }
 
   .navbar-wrapper {
@@ -275,12 +227,7 @@ const { title, description } = Astro.props;
     html {
       font-family: Openhuninn;
     }
-    .hamburger {
-      display: flex;
-    }
-    /* .hamburger:has(input[type="checkbox"]:checked) {
-      display: flex;
-    } */
+
     header {
       --header-height: 10rem;
     }

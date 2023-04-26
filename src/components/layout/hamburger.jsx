@@ -1,3 +1,5 @@
+import styles from './css/hamburger.module.css'
+
 export default function Hamburger({ id, toggleHamburger, unCheck }) {
 
     function handClick(e) {        
@@ -5,7 +7,7 @@ export default function Hamburger({ id, toggleHamburger, unCheck }) {
     }
 
     return (
-        <div className='hamburger'>
+        <div className={styles['hamburger']}>
             <input id={id} type="checkbox" onClick={handClick} name="hamburger-check" />
             <span></span>
             <span></span>
