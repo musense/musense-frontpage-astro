@@ -4,12 +4,8 @@ import styles from './css/whyMusense.module.css';
 export default function WhyMusense() {
     return (
         <div className={styles['why-musense']}>
-            <div className={styles['bird']}></div>
-            <div className={styles['why-musense-view']}>
-                <div className={styles['main']}>
-                </div>
-                <hr className={styles['hr']} />
-            </div>
+            <div className={styles['bird']} />
+            <div className={styles['main']} />
 
             <div className={styles['sub-title']}>
                 ＂傾聽陌聲，傳遞陌生＂

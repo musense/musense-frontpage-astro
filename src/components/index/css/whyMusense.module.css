@@ -23,35 +23,34 @@
     height: 187px;
 }
 
-.why-musense .why-musense-view {
-    position: relative;
+.why-musense .main {
     margin: 90px auto 0;
-}
-
-.why-musense .why-musense-view .main {
     background-image: var(--why-musense-main);
     height: 76px;
     position: relative;
-    width: 588px;
+    width: 538px;
     z-index: 1;
-    margin: 0 auto;
     background-color: var(--theme-color-hex);
 }
 
-.why-musense .why-musense-view .hr {
-    background-color: #fff;
-    background-image: var(--whi-musense-hr);
-    border: none;
-    color: #fff;
-    height: 1px;
-    left: 50%;
+.why-musense .main::before,
+.why-musense .main::after {
+    content: "";
     position: absolute;
+    height: 1px;
+    background-color: white;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 1240px;
-    z-index: 0;
+    transform: translateY(-50%);
+    width: 320px;
 }
 
+.why-musense .main::before {
+    left: -340px;
+}
+
+.why-musense .main::after {
+    right: -340px;
+}
 
 .why-musense .sub-title {
     color: white;
@@ -114,42 +113,31 @@
         left: 3rem;
     }
 
-    .why-musense .why-musense-view {
+    .why-musense .main {
         margin: 3rem auto 0;
-    }
-
-    .why-musense .why-musense-view .main {
         height: 3rem;
         width: 25.9rem;
         background-color: transparent;
     }
 
-    .why-musense .why-musense-view .main::before,
-    .why-musense .why-musense-view .main::after {
+    .why-musense .main::before,
+    .why-musense .main::after {
         background-image: url(/assets/mobile/service/flower_blue.webp);
+        background-color: transparent;
         background-repeat: no-repeat;
         background-size: contain;
-        content: "";
         height: 1.5rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         width: 5.4rem;
-        /* background-color: red; */
         background-position: center;
     }
-    .why-musense .why-musense-view .main::before{
+
+    .why-musense .main::before {
         left: -6rem;
     }
 
-    .why-musense .why-musense-view .main::after{
+    .why-musense .main::after {
         right: -6rem;
     }
-
-    .why-musense .why-musense-view .hr {
-        display: none
-    }
-
 
     .why-musense .sub-title {
         font-size: 2rem;

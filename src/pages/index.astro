@@ -52,33 +52,52 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
     align-self: flex-end;
     top: -20px;
   }
+
+  .orange-bubble-right,
+  .orange-bubble-left,
+  .blue-bubble-right,
+  .blue-bubble-left {
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    user-select: none;
+    width: 338px;
+    height: 261px;
+    filter: drop-shadow(3px 8px 8px rgba(0, 0, 0, 0.4));
+  }
   .orange-bubble-right,
   .orange-bubble-left {
-    position: relative;
-    width: 354px;
-    height: 278px;
+    background-image: url(/assets/index/orangeBubble.webp);
+    color: var(--theme-color-hex);
   }
   .orange-bubble-right {
+    padding: 104px 0px 0 14px;
     margin-right: 0;
-    background-image: url(/assets/index/orangeBubble_right.webp);
+    /* background-image: url(/assets/index/orangeBubble_right.webp); */
   }
   .orange-bubble-left {
+    padding: 104px 0px 0 24px;
     margin-left: 0;
-    background-image: url(/assets/index/orangeBubble_left.webp);
+    /* background-image: url(/assets/index/orangeBubble_left.webp); */
   }
   .blue-bubble-right,
   .blue-bubble-left {
-    position: relative;
-    width: 371px;
-    height: 291px;
+    background-image: url(/assets/index/blueBubble.webp);
+    color: white;
   }
   .blue-bubble-right {
+    padding: 91px 5px 0 0px;
     margin-left: auto;
-    background-image: url(/assets/index/blueBubble_right.webp);
+    /* background-image: url(/assets/index/blueBubble_right.webp); */
   }
   .blue-bubble-left {
+    padding: 89px 0px 0 5px;
     margin-left: auto;
-    background-image: url(/assets/index/blueBubble_left.webp);
+    /* background-image: url(/assets/index/blueBubble_left.webp); */
   }
   [data-aos='orange-slide-left'],
   [data-aos='blue-slide-left'] {
@@ -125,6 +144,48 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
     .bubble-box {
       display: none;
     }
+
+    .orange-bubble-product,
+    .orange-bubble-view,
+    .blue-bubble-seo,
+    .blue-bubble-time {
+      position: relative;
+      box-sizing: border-box;
+      /* filter: drop-shadow(3px 8px 8px rgba(0, 0, 0, 0.4)); */
+      font-size: 1.6rem;
+      font-weight: 800;
+      height: 16.5rem;
+      width: 22rem;
+      line-height: 1.8;
+      text-align: center;
+      user-select: none;
+    }
+    .orange-bubble-product,
+    .orange-bubble-view {
+      background-image: url(/assets/index/orangeBubble.webp);
+      color: var(--theme-color-hex);
+    }
+    .orange-bubble-product {
+      padding: 6.5rem 0 0 1.2rem;
+      margin-right: 0;
+    }
+    .orange-bubble-view {
+      padding: 6.7rem 0 0 0.8rem;
+      margin-left: 0;
+    }
+    .blue-bubble-seo,
+    .blue-bubble-time {
+      background-image: url(/assets/index/blueBubble.webp);
+      color: white;
+    }
+    .blue-bubble-seo {
+      padding: 6rem 0.9rem 0 0rem;
+      margin-left: auto;
+    }
+    .blue-bubble-time {
+      padding: 5.3rem 1.5rem 0 0rem;
+      margin-left: auto;
+    }
     .bubble-box-mobile {
       margin: 3.5rem auto 0;
       width: calc(100% - 2rem);
@@ -145,59 +206,38 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
       margin-top: 16rem;
       left: -6rem;
     }
-
-    .orange-bubble-product,
-    .orange-bubble-view,
-    .blue-bubble-time,
-    .blue-bubble-seo {
-      width: 22rem;
-      height: 16.5rem;
-    }
-    .orange-bubble-product {
-      background-image: url(/assets/mobile/about/orangeBubble_product.webp);
-    }
-
-    .orange-bubble-view {
-      background-image: url(/assets/mobile/about/orangeBubble_view.webp);
-    }
-    .blue-bubble-time {
-      background-image: url(/assets/mobile/about/blueBubble_time.webp);
-    }
-    .blue-bubble-seo {
-      background-image: url(/assets/mobile/about/blueBubble_seo.webp);
-    }
+  
     .orange-bubble-product::after,
     .orange-bubble-view::after,
     .blue-bubble-time::after,
     .blue-bubble-seo::after {
       content: '';
       display: block;
-      position: relative;
+      position: absolute;
       width: 14rem;
       height: 14rem;
-      background-image: url(/assets/mobile/about/productImage.webp);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
     }
     .orange-bubble-product::after {
       background-image: url(/assets/mobile/about/productImage.webp);
-      margin-top: 1.3rem;
-      margin-left: 21rem;
+      top: 1.3rem;
+      left: 21rem;
     }
     .orange-bubble-view::after {
       background-image: url(/assets/mobile/about/viewImage.webp);
-      margin-top: 1.3rem;
-      margin-left: 20.5rem;
+      top: 1.3rem;
+      left: 20.5rem;
     }
     .blue-bubble-time::after {
       background-image: url(/assets/mobile/about/timeImage.webp);
-      margin-top: 3rem;
+      top: 3rem;
       left: -12rem;
     }
     .blue-bubble-seo::after {
       background-image: url(/assets/mobile/about/seoImage.webp);
-      margin-top: 2.8rem;
+      top: 2.8rem;
       left: -12rem;
     }
   }
