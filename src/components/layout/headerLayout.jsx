@@ -26,7 +26,7 @@ export default function HeaderLayout() {
   const showHeader = useShowHeader();
 
   function unCheck() {
-    
+
     setActive(false)
     hamburgerCheck = document.querySelector(`#${hamburgerRef.current}`);
     hamburgerCheck.checked = false;
@@ -59,7 +59,6 @@ export default function HeaderLayout() {
                         to='about'
                       />
                     </li>
-
                     <li onClick={() => unCheck()}>
                       <HeaderScrollLink
                         currentId="a-service"
@@ -68,7 +67,6 @@ export default function HeaderLayout() {
                         to='service'
                       />
                     </li>
-
                     <li onClick={() => unCheck()}>
                       <HeaderScrollLink
                         currentId="a-contactUs"
@@ -77,19 +75,16 @@ export default function HeaderLayout() {
                         to='contact'
                       />
                     </li>
-                    <li>
-                      <button
-                        data-tooltip="敬請期待"
+                    <li
+                      data-tooltip="敬請期待"
+                    >
+                      <HeaderScrollLink
+                        currentId="a-marketing"
+                        offset={-10}
                         className={`navBtn marketing`}
-                      // href='marketing'
-                      >
-                        marketing</button>
-                      {/* <a
-                        data-tooltip="敬請期待"
-                        className={`navBtn marketing`}
-                      // href='marketing'
-                      >
-                        marketing</a> */}
+                        to='marketing'
+                        disable={true}
+                      />
                     </li>
                   </ul>
                 )}
@@ -118,7 +113,7 @@ export default function HeaderLayout() {
                     <li>
                       <button
                         className={`navBtn marketing`}
-                        // href='marketing'
+                      // href='marketing'
                       >marketing</button>
                       {/* <a
                         className={`navBtn marketing`}

@@ -125,7 +125,6 @@ const { title, description } = Astro.props;
     top: 0;
   }
 
-
   nav {
     position: relative;
     display: inline-block;
@@ -140,6 +139,7 @@ const { title, description } = Astro.props;
   }
 
   li {
+    position: relative;
     list-style: none;
     width: var(--header-btn-width);
     height: var(--header-btn-height);
@@ -214,14 +214,51 @@ const { title, description } = Astro.props;
     gap: 245px;
     margin: 0 auto 22px;
   }
-  /* @media (max-width: 1200px) {
-
-    header {
-      height: 19rem;
-      align-items: flex-end;
-      --n-header-height: -19rem;
-    }
-  } */
+  .nav-button {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 11.5rem;
+    height: 3.5rem;
+    /* background-color: lightgrey; */
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .nav-button > .bubble {
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex: 1 0;
+    height: 21px;
+    width: 22px;
+  }
+  .nav-button > .bubble.orange {
+    background-image: url(/assets/menu/bubbleOrange.webp);
+  }
+  .nav-button > .bubble.blue {
+    background-image: url(/assets/menu/bubbleBlue.webp);
+  }
+  .nav-button > .nav-text-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 4 0;
+    /* background-color: lightblue; */
+  }
+  .nav-text-wrapper > div:first-child {
+    /* background-color: lightcoral; */
+    letter-spacing: 3px;
+    font-family: sans-serif;
+    font-size: 12px;
+  }
+  .nav-text-wrapper > div:last-child {
+    /* background-color: lightcyan; */
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: TaipeiSansTCBeta;
+  }
   /* desktops */
   @media (max-width: 1200px) {
     html {
@@ -334,12 +371,12 @@ const { title, description } = Astro.props;
 
   @media (max-width: 1200px) {
     [data-tooltip]::before {
-      transform: translate(-29%, -0%);
+      transform: translate(-50%, -0%);
       transition: transform 0.2s, opacity 0.2s;
     }
 
     [data-tooltip]:hover::before {
-      transform: translate(-29%, 100%);
+      transform: translate(-50%, 100%);
     }
   }
 </style>
