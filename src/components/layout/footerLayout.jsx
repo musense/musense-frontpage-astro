@@ -18,7 +18,9 @@ export default function FooterLayout() {
         </div>
         <div className={styles['right-side']}>
           <div className={styles['button-box']}>
-            <div className={styles['contact-us-btn']} />
+            <div className={styles['contact-us-btn']} >
+              聯絡我們
+            </div>
             <div className={styles['social-btn-box']}>
               <a title='musense facebook' href='https://www.facebook.com/musense.marketing' target='_blank' className={styles['fb-icon']} ></a>
               <a title='musense instagram' href='https://www.instagram.com/musense.marketing/' target='_blank' className={styles['ig-icon']} ></a>

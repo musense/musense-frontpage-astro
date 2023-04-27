@@ -75,10 +75,33 @@
   position: relative;
   width: 100%;
   height: 44px;
-  background-image: url(/assets/mobile/footer/contactUsDown.webp);
-  /* background-position: left !important; */
-  /* cursor: pointer; */
+  color: white;
+  font-size: 24px;
+  line-height: 44px;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
 }
+.contact-us-btn::before,
+.contact-us-btn::after {
+  background-color: var(--theme-color-hex);
+  border: 1px solid var(--theme-color-hex);
+  border-radius: 2px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 126px;
+}
+.contact-us-btn::before{
+  top: 0px;
+}
+.contact-us-btn::after{
+  bottom: -0px;
+}
+
 /* .contact-us-btn:hover {
   background-image: url(/assets/mobile/footer/button/contactButton_h.webp);
 } */
@@ -185,9 +208,15 @@
     gap: 2.5rem;
   }
   .contact-us-btn {
-    width: 11.6rem;
-    height: 4rem;
-    background-image: url(/assets/mobile/footer/contactUsDown.webp);
+    height: 4.4rem;
+    font-size: 2.4rem;
+    line-height: 4.4rem;
+  }
+  .contact-us-btn::before,
+  .contact-us-btn::after {
+    border-radius: 0.2rem;
+    height: 0.2rem;
+    width: 12.6rem;
   }
   .social-btn-box {
     width: unset;
