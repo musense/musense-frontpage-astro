@@ -2,7 +2,6 @@
   position: relative;
   bottom: 0;
   height: 298px;
-  /* background-image: url(/assets/mobile/footer/footer.jpg); */
   background-color: #53575a;
   margin-top: 90px;
   font-family: Openhuninn;
@@ -103,10 +102,6 @@
   bottom: -0px;
 }
 
-/* .contact-us-btn:hover {
-  background-image: url(/assets/mobile/footer/button/contactButton_h.webp);
-} */
-
 .social-btn-box {
   position: relative;
   width: 100%;
@@ -124,37 +119,19 @@
 }
 
 .fb-icon {
-  background-image: url(/assets/mobile/footer/FBIcon.webp);
+  background-image: url(/assets/mobile/footer/FBIcon.svg);
 }
 
 .ig-icon {
-  background-image: url(/assets/mobile/footer/IGIcon.webp);
+  background-image: url(/assets/mobile/footer/IGIcon.svg);
 }
 
-.ms-icon {
-  background-image: url(/assets/mobile/footer/MSIcon.webp);
-}
-
-.mail-icon {
-  background-image: url(/assets/mobile/footer/MailIcon.webp);
-}
-
-.aa {
-  font-size: 22px;
-  padding-bottom: 21px;
-  font-family: TaipeiSansTCBeta;
-}
 
 @media (max-width: 1200px) {
   .footer-wrapper {
     width: 100vw;
     height: 33.8px;
-    /* background-image: url(/assets/mobile/footer/footer.jpg); */
     margin-top: 90px;
-  }
-
-  .footer-box {
-    /* width: 90vw; */
   }
 
   .left-side {
@@ -239,14 +216,6 @@
     height: 3.5rem;
     background-size: 100%;
     cursor: pointer;
-  }
-
-  .fb-icon {
-    background-image: url(/assets/mobile/footer/FBIcon.webp);
-  }
-
-  .ig-icon {
-    background-image: url(/assets/mobile/footer/IGIcon.webp);
   }
 
   .copyright {
