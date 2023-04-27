@@ -49,6 +49,7 @@
   text-align: center;
   width: 509px;
   user-select: none;
+  color: #53575a;
 }
 
 .slogan .text-zhtw {
@@ -56,7 +57,6 @@
   letter-spacing: 9px;
   font-size: 40px;
   font-weight: bold;
-  color: #666;
 }
 
 .slogan .text-en {
@@ -149,17 +149,14 @@
     /* background-image: url(/assets/mobile/about/slogan.webp); */
     height: 10rem;
     margin: 1rem auto;
-    position: relative;
     width: 100vw;
     /* background-image: unset; */
     /* background-color: lightgrey; */
   }
 
   .slogan .text-zhtw {
-    font-family: cursive;
     font-size: 4rem;
-    font-weight: 500;
-    letter-spacing: 9px;
+    letter-spacing: 0.9rem;
   }
 
   .slogan .text-en {
