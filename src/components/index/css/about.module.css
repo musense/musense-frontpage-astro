@@ -48,16 +48,15 @@
   position: relative;
   text-align: center;
   width: 509px;
-  /* background-image: url(/assets/index/slogan.webp);
-  background-color: lightgrey; */
   user-select: none;
 }
 
 .slogan .text-zhtw {
-  font-family: cursive;
+  font-family: 'Times New Roman', serif;
   letter-spacing: 9px;
   font-size: 40px;
-  font-weight: 500;
+  font-weight: bold;
+  color: #666;
 }
 
 .slogan .text-en {
@@ -184,20 +183,14 @@
   }
 
   .slogan {
-    /* background-image: url(/assets/mobile/about/slogan.webp); */
     height: 10rem;
     margin: 1rem auto;
-    position: relative;
     width: 100vw;
-    /* background-image: unset; */
-    /* background-color: lightgrey; */
   }
 
   .slogan .text-zhtw {
-    font-family: fangsong, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 9px;
+    letter-spacing: 0.9rem;
   }
 
   .slogan .text-en {
