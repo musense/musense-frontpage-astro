@@ -20,11 +20,11 @@ export default function HeaderLayout() {
     if (hamburgerRef.current == null) {
       hamburgerRef.current = "hamburger-check"
     }
-    console.log("🚀 ~ file: headerLayout.jsx:25 ~ HeaderLayout ~ active:", active)
+    // console.log("🚀 ~ file: headerLayout.jsx:25 ~ HeaderLayout ~ active:", active)
   }, [hamburgerRef, active]);
 
-  const showHeader = useShowHeader();
-
+  const [showHeader, headerForceHide] = useShowHeader();
+  
   function unCheck() {
 
     setActive(false)
@@ -32,7 +32,7 @@ export default function HeaderLayout() {
     hamburgerCheck.checked = false;
   }
   function toggleHamburger(e) {
-    console.log("Clicked, new value = " + e.target.checked);
+    // console.log("Clicked, new value = " + e.target.checked);
     setActive(e.target.checked)
   }
   return (
@@ -55,24 +55,27 @@ export default function HeaderLayout() {
                       <HeaderScrollLink
                         currentId="a-about"
                         offset={0}
-                        className={`navBtn about`}
                         to='about'
+                        name='about'
+                        callbackHandler={headerForceHide}
                       />
                     </li>
                     <li onClick={() => unCheck()}>
                       <HeaderScrollLink
                         currentId="a-service"
                         offset={-10}
-                        className={`navBtn service`}
                         to='service'
+                        name='service'
+                        callbackHandler={headerForceHide}
                       />
                     </li>
                     <li onClick={() => unCheck()}>
                       <HeaderScrollLink
                         currentId="a-contactUs"
                         offset={-10}
-                        className={`navBtn contact`}
                         to='contact'
+                        name='contact'
+                        callbackHandler={headerForceHide}
                       />
                     </li>
                     <li
@@ -81,9 +84,10 @@ export default function HeaderLayout() {
                       <HeaderScrollLink
                         currentId="a-marketing"
                         offset={-10}
-                        className={`navBtn marketing`}
                         to='marketing'
+                        name='marketing'
                         disable={true}
+                        callback={() => console.log('marketing clicked')}
                       />
                     </li>
                   </ul>
