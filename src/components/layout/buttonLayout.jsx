@@ -10,6 +10,7 @@ export default function ButtonLayout() {
                 offset={-10}
                 className={`fixedBtn email-btn`}
                 to='contact'
+                name='contactUs'
             />
         </div>
     )
