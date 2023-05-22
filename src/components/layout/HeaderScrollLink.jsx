@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
 import styles from './css/headerScrollLink.module.css'
-import useShowHeader from './hook/useShowHeader';
 const navMap = new Map([
   ['about', {
     name: {
@@ -29,7 +28,7 @@ const navMap = new Map([
   ['marketing', {
     name: {
       en: 'Marketing',
-      ch: '服務項目',
+      ch: '行銷趨勢',
     },
   }],
 ])
@@ -44,9 +43,9 @@ export default function HeaderScrollLink({
   callbackHandler = null
 }) {
 
+  console.log("🚀 ~ file: HeaderScrollLink.jsx:39 ~ scrollHandler ~ callback:", callbackHandler)
   const targetRef = useRef(null)
   const scrollHandler = useCallback(() => {
-    // console.log("🚀 ~ file: HeaderScrollLink.jsx:39 ~ scrollHandler ~ callback:", callbackHandler)
     window.scrollTo({
       top: targetRef.current + offset,
       behavior: 'smooth',
@@ -58,6 +57,7 @@ export default function HeaderScrollLink({
 
   useEffect(() => {
     if (!disable) {
+      // scroll button
       let btn;
       if (targetRef.current === null) {
         const target = document.getElementById(to)
@@ -68,24 +68,36 @@ export default function HeaderScrollLink({
 
         // document.addEventListener('touchmove', ()=>console.log('touchmove!!!!!'))
       }
-      const ref = targetRef.current
+
+      const myBtnRef = btn
       return () => {
-        ref.removeEventListener('click', scrollHandler)
+        myBtnRef.removeEventListener('click', scrollHandler)
       }
     }
   }, [targetRef, disable]);
   const color = to === 'marketing' ? 'blue' : 'orange'
   const mainClassName = className ? className : styles['nav-button']
-  return (
-    <div
+  return disable
+    ? (<a
       id={currentId}
-      title={`${to}`}
-      className={mainClassName}>
+      href={`${to}`}
+      className={mainClassName} >
       <div className={`${styles['bubble']} ${styles[color]}`} />
       <div className={styles['nav-text-wrapper']}>
         <div>{navMap.get(name).name.en}</div>
         <div>{navMap.get(name).name.ch}</div>
       </div>
-    </div>
-  )
+    </a>)
+    : (
+      <div
+        id={currentId}
+        title={`${to}`}
+        className={mainClassName} >
+        <div className={`${styles['bubble']} ${styles[color]}`} />
+        <div className={styles['nav-text-wrapper']}>
+          <div>{navMap.get(name).name.en}</div>
+          <div>{navMap.get(name).name.ch}</div>
+        </div>
+      </div >
+    )
 }

@@ -22,6 +22,7 @@
   font-weight: bold;
   user-select: none;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .service-box>div::after {

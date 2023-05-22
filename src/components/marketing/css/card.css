@@ -1,0 +1,74 @@
+.card {
+  position: relative;
+  width: 314px;
+  height: var(--card-height);
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-img {
+  position: inherit;
+  width: 100%;
+  height: 210px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.1s linear;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-wrapper.upper > .card > .card-img {
+  background-image: url('/public/img/marketing/image1.webp');
+}
+.card-wrapper.lower > .card > .card-img {
+  background-image: url('/public/img/marketing/image2.webp');
+}
+
+.card-content {
+  position: inherit;
+  width: 100%;
+  height: 58px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  font-size: 16px;
+  letter-spacing: 3.4px;
+  color: #53575a;
+  text-align: left;
+  font-family: TaipeiSansTCBeta;
+  line-height: 1.2;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; */
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Openhuninn;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  line-height: 1;
+}
+
+.card-tag {
+  color: #f88d2a;
+}
+
+.card-create-date {
+  color: #53575a;
+}

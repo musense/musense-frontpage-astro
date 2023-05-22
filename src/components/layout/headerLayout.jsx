@@ -24,7 +24,7 @@ export default function HeaderLayout() {
   }, [hamburgerRef, active]);
 
   const [showHeader, headerForceHide] = useShowHeader();
-  
+
   function unCheck() {
 
     setActive(false)
@@ -79,50 +79,62 @@ export default function HeaderLayout() {
                       />
                     </li>
                     <li
-                      data-tooltip="敬請期待"
+                      onClick={() => unCheck()}
                     >
                       <HeaderScrollLink
                         currentId="a-marketing"
                         offset={-10}
                         to='marketing'
                         name='marketing'
-                        disable={true}
-                        callback={() => console.log('marketing clicked')}
+                        disable
+                        callbackHandler={headerForceHide}
                       />
                     </li>
                   </ul>
                 )}
                 {(pathname === '/marketing' || pathname.startsWith('/content')) && (
                   <ul>
-                    <li>
-                      <HeaderHashLink
-                        className={`navBtn about`}
-                        to='about'
+                    <li onClick={() => unCheck()}>
+                      <HeaderScrollLink
+                        currentId="a-about"
+                        offset={0}
+                        to='/'
+                        name='about'
+                        disable
+                        callbackHandler={headerForceHide}
                       />
                     </li>
-
-                    <li>
-                      <HeaderHashLink
-                        className={`navBtn service`}
-                        to='service'
+                    <li onClick={() => unCheck()}>
+                      <HeaderScrollLink
+                        currentId="a-service"
+                        offset={-10}
+                        to='/'
+                        name='service'
+                        disable
+                        callbackHandler={headerForceHide}
                       />
                     </li>
-
-                    <li>
-                      <HeaderHashLink
-                        className={`navBtn contact`}
-                        to='contact'
+                    <li onClick={() => unCheck()}>
+                      <HeaderScrollLink
+                        currentId="a-contactUs"
+                        offset={-10}
+                        to='/'
+                        name='contact'
+                        disable
+                        callbackHandler={headerForceHide}
                       />
                     </li>
-                    <li>
-                      <button
-                        className={`navBtn marketing`}
-                      // href='marketing'
-                      >marketing</button>
-                      {/* <a
-                        className={`navBtn marketing`}
-                        // href='marketing'
-                      >marketing</a> */}
+                    <li
+                      onClick={() => unCheck()}
+                    >
+                      <HeaderScrollLink
+                        currentId="a-marketing"
+                        offset={-10}
+                        to='marketing'
+                        name='marketing'
+                        disable
+                        callbackHandler={headerForceHide}
+                      />
                     </li>
                   </ul>
                 )}

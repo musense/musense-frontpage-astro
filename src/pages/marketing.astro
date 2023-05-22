@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banner from '@components/marketing/banner';
+import MarketingButtonList from '@components/marketing/marketingButtonList';
+import CardBox from '@components/marketing/cardBox';
+import MiscButtonList from '@components/marketing/miscButtonList';
+
+const env = import.meta.env;
+console.log('🚀 ~ file: index.astro:8 ~ env:', env);
+
+const emailProps: EmailProps = {
+  service_key: env.EMAIL_SERVICE_KEY,
+  template_key: env.EMAIL_TEMPLATE_KEY,
+  public_key: env.EMAIL_PUBLIC_KEY,
+};
+console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
+---
+
+<Layout
+  title={env.VITE_APP_TITLE}
+  description={env.VITE_APP_DESCRIPTION}
+>
+  <Banner client:load />
+  <MarketingButtonList client:load />
+  <CardBox client:visible />
+  <MiscButtonList client:visible/>
+</Layout>
+
+<style type='text/css' is:global>
+  :root {
+  }
+</style>
