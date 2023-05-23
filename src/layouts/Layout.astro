@@ -5,9 +5,11 @@ import FooterLayout from '@components/layout/footerLayout';
 export interface Props {
   title: string;
   description: string;
+  path: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, path } = Astro.props;
+console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
 ---
 
 <!DOCTYPE html>
@@ -49,10 +51,10 @@ const { title, description } = Astro.props;
   </head>
   <body id='root'>
     <HeaderLayout client:load />
-    <ButtonLayout client:media='(max-width: 768px)' />
+    <ButtonLayout path={path} client:load />
     <slot />
 
-    <FooterLayout client:load />
+    <FooterLayout client:idle />
 
     <!-- Google Tag Manager (noscript) -->
     <noscript
@@ -148,14 +150,17 @@ const { title, description } = Astro.props;
 
   button,
   a {
+    margin: 0;
     padding: 0;
     position: relative;
     cursor: pointer;
     color: transparent;
-    -webkit-user-select: none;
     user-select: none;
   }
 
+  a {
+    text-decoration: none;
+  }
   [data-tooltip]::before {
     position: absolute;
     content: attr(data-tooltip);
@@ -327,7 +332,20 @@ const { title, description } = Astro.props;
     .marketing {
       background-image: url(/assets/mobile/header/marketing.webp);
     }
+  }
 
+  @media (max-width: 1200px) {
+    [data-tooltip]::before {
+      transform: translate(-50%, -0%);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    [data-tooltip]:hover::before {
+      transform: translate(-50%, 100%);
+    }
+  }
+
+  @media (max-width: 768px) {
     .btn-wrapper {
       --fixed-btn-width: 11.5rem;
       --fixed-btn-gap: 2rem;
@@ -367,17 +385,6 @@ const { title, description } = Astro.props;
     }
     .email-btn {
       background-image: url(/assets/mobile/header/email.webp);
-    }
-  }
-
-  @media (max-width: 1200px) {
-    [data-tooltip]::before {
-      transform: translate(-50%, -0%);
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    [data-tooltip]:hover::before {
-      transform: translate(-50%, 100%);
     }
   }
 </style>

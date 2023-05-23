@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/banner.css';
 
 export default function Banner() {
   return (

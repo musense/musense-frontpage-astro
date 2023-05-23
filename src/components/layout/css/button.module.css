@@ -29,45 +29,45 @@
 }
 
 .btn-marketing.advertise {
-  background-image: url(/assets/bottom/advertise.webp);
+  background-image: url(/assets/button/advertise.webp);
 }
 .btn-marketing.advertise:hover {
-  background-image: url(/assets/bottom/advertise_h.webp);
+  background-image: url(/assets/button/advertise_h.webp);
 }
 .btn-marketing.seo {
-  background-image: url(/assets/bottom/seo.webp);
+  background-image: url(/assets/button/seo.webp);
 }
 .btn-marketing.seo:hover {
-  background-image: url(/assets/bottom/seo_h.webp);
+  background-image: url(/assets/button/seo_h.webp);
 }
 .btn-marketing.social-media {
-  background-image: url(/assets/bottom/socialMedia.webp);
+  background-image: url(/assets/button/socialMedia.webp);
 }
 .btn-marketing.social-media:hover {
-  background-image: url(/assets/bottom/socialMedia_h.webp);
+  background-image: url(/assets/button/socialMedia_h.webp);
 }
 .btn-marketing.cis {
-  background-image: url(/assets/bottom/cis.webp);
+  background-image: url(/assets/button/cis.webp);
 }
 .btn-marketing.cis:hover {
-  background-image: url(/assets/bottom/cis_h.webp);
+  background-image: url(/assets/button/cis_h.webp);
 }
 .btn-marketing.brand {
-  background-image: url(/assets/bottom/brand.webp);
+  background-image: url(/assets/button/brand.webp);
 }
 .btn-marketing.brand:hover {
-  background-image: url(/assets/bottom/brand_h.webp);
+  background-image: url(/assets/button/brand_h.webp);
 }
 
 .btn-marketing.back-home {
-  background-image: url(/assets/bottom/backHome.webp);
+  background-image: url(/assets/button/backHome.webp);
 }
 .btn-marketing.back-home:hover {
-  background-image: url(/assets/bottom/backHome_h.webp);
+  background-image: url(/assets/button/backHome_h.webp);
 }
 .btn-marketing.see-more {
-  background-image: url(/assets/bottom/seeMore.webp);
+  background-image: url(/assets/button/seeMore.webp);
 }
 .btn-marketing.see-more:hover {
-  background-image: url(/assets/bottom/seeMore_h.webp);
+  background-image: url(/assets/button/seeMore_h.webp);
 }

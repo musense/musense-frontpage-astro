@@ -9,7 +9,7 @@
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@services/*":["src/services/*"]
+      "@services/*":["src/services/*"],
     }
   }
 }

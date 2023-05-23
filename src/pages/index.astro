@@ -18,12 +18,13 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
 <Layout
   title={env.VITE_APP_TITLE}
   description={env.VITE_APP_DESCRIPTION}
+  path={'/'}
 >
   <About client:load />
-  <OurService client:load />
+  <OurService client:visible />
   <ContactUs
     emailProps={emailProps}
-    client:load
+    client:visible
   />
 </Layout>
 

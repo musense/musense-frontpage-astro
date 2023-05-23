@@ -146,11 +146,20 @@
 
 @media (max-width: 768px) {
   .footer-wrapper {
-    height: 34rem;
+    height: 36rem;
     margin-top: 5rem;
     padding-top: 3rem;
     box-sizing: border-box;
   }
+
+  .footer-wrapper.marketing {
+    margin-top: 4rem;
+  }
+
+  .footer-wrapper.content {
+    margin-top: 2rem;
+  }
+
 
   .footer-box {
     align-items: center;

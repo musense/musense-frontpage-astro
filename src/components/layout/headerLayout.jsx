@@ -84,9 +84,9 @@ export default function HeaderLayout() {
                       <HeaderScrollLink
                         currentId="a-marketing"
                         offset={-10}
-                        to='marketing'
+                        to='/marketing'
                         name='marketing'
-                        disable
+                        disableScroll
                         callbackHandler={headerForceHide}
                       />
                     </li>
@@ -100,7 +100,7 @@ export default function HeaderLayout() {
                         offset={0}
                         to='/'
                         name='about'
-                        disable
+                        disableScroll
                         callbackHandler={headerForceHide}
                       />
                     </li>
@@ -110,7 +110,7 @@ export default function HeaderLayout() {
                         offset={-10}
                         to='/'
                         name='service'
-                        disable
+                        disableScroll
                         callbackHandler={headerForceHide}
                       />
                     </li>
@@ -120,7 +120,7 @@ export default function HeaderLayout() {
                         offset={-10}
                         to='/'
                         name='contact'
-                        disable
+                        disableScroll
                         callbackHandler={headerForceHide}
                       />
                     </li>
@@ -130,9 +130,9 @@ export default function HeaderLayout() {
                       <HeaderScrollLink
                         currentId="a-marketing"
                         offset={-10}
-                        to='marketing'
+                        to='/marketing'
                         name='marketing'
-                        disable
+                        disableScroll
                         callbackHandler={headerForceHide}
                       />
                     </li>

@@ -1,7 +1,6 @@
 import React from "react";
-import './css/button.css';
-import BtnMarketing from "./btnMarketing";
-import BtnMarketingWrapper from "./btnMarketingWrapper";
+import BtnMarketing from "@components/btnMarketing";
+import BtnMarketingWrapper from '@components/btnMarketingWrapper';
 
 export default function MiscButtonList() {
   return  (

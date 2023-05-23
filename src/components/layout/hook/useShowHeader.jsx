@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useClientWindowWidth from './useClientWindowWidth';
-import debounce from './../../../services/debounce'
+import debounce from '@services/debounce'
 export default function useShowHeader() {
 
     const clientWindowWidth = useClientWindowWidth()
@@ -23,7 +23,7 @@ export default function useShowHeader() {
 
     useScrollPosition(({ prevPos, currPos }) => {
         // console.group("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ useScrollPosition")
-        console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ currPos:", currPos.y)
+        // console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ currPos:", currPos.y)
         // console.log("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ prevPos:", prevPos.y)
         // console.groupEnd("🚀 ~ file: useShowHeader.jsx:14 ~ useScrollPosition ~ useScrollPosition")
 

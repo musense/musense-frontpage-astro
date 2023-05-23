@@ -39,11 +39,11 @@ export default function HeaderScrollLink({
   name,
   offset,
   to,
-  disable = false,
+  disableScroll = false,
   callbackHandler = null
 }) {
 
-  console.log("🚀 ~ file: HeaderScrollLink.jsx:39 ~ scrollHandler ~ callback:", callbackHandler)
+  // console.log("🚀 ~ file: HeaderScrollLink.jsx:39 ~ scrollHandler ~ callback:", callbackHandler)
   const targetRef = useRef(null)
   const scrollHandler = useCallback(() => {
     window.scrollTo({
@@ -56,7 +56,7 @@ export default function HeaderScrollLink({
 
 
   useEffect(() => {
-    if (!disable) {
+    if (!disableScroll) {
       // scroll button
       let btn;
       if (targetRef.current === null) {
@@ -74,10 +74,10 @@ export default function HeaderScrollLink({
         myBtnRef.removeEventListener('click', scrollHandler)
       }
     }
-  }, [targetRef, disable]);
-  const color = to === 'marketing' ? 'blue' : 'orange'
+  }, [targetRef, disableScroll]);
+  const color = to === '/marketing' ? 'blue' : 'orange'
   const mainClassName = className ? className : styles['nav-button']
-  return disable
+  return disableScroll
     ? (<a
       id={currentId}
       href={`${to}`}

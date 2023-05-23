@@ -1,9 +1,8 @@
 import React from 'react';
-import './css/hotContent.css';
 
 export default function HotContent() {
   return (
-    <div className='hot-content-wrapper'>
+    <div data-title="熱門文章" className='hot-content-wrapper'>
       <div className='hot-left-side'>
         <div className='hot-content'>
           <span className="ellipsis">阿里山林鐵質感新車廂《福森號》亮相！超大景觀窗，紅檜、台灣扁柏打造的現代高雅設計。</span>
