@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { title, description, path } = Astro.props;
-console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
+console.log('🚀 ~ file: Layout.astro:12 ~ path:', path);
 ---
 
 <!DOCTYPE html>
@@ -51,7 +51,10 @@ console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
   </head>
   <body id='root'>
     <HeaderLayout client:load />
-    <ButtonLayout path={path} client:load />
+    <ButtonLayout
+      path={path}
+      client:load
+    />
     <slot />
 
     <FooterLayout client:idle />
@@ -127,7 +130,9 @@ console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
   header.show {
     top: 0;
   }
-
+  #nav-backdrop {
+    display: none;
+  }
   nav {
     position: relative;
     display: inline-block;
@@ -277,6 +282,18 @@ console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
     header.hide {
       --n-header-height: -10rem;
     }
+    #nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: white;
+      opacity: 0.5;
+      z-index: calc(var(--header-z-index) - 1);
+      z-index: 2;
+      display: none;
+    }
+    #nav-backdrop.active {
+      display: block;
+    }
     .navbar-wrapper {
       width: 100%;
     }
@@ -298,6 +315,7 @@ console.log("🚀 ~ file: Layout.astro:12 ~ path:", path)
     }
     nav.active {
       transform: scale(1);
+      z-index: 3;
     }
 
     ul {
