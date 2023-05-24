@@ -21,7 +21,10 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
   path={'/'}
 >
   <About client:load />
-  <OurService client:visible />
+  <OurService
+    apiUrl={env.VITE_SERVER_URL}
+    client:load
+  />
   <ContactUs
     emailProps={emailProps}
     client:visible
@@ -207,7 +210,7 @@ console.log('🚀 ~ file: index.astro:14 ~ emailProps:', emailProps);
       margin-top: 16rem;
       left: -6rem;
     }
-  
+
     .orange-bubble-product::after,
     .orange-bubble-view::after,
     .blue-bubble-time::after,

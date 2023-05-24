@@ -5,14 +5,14 @@ import WhyMusense from "./whyMusense";
 
 
 
-export default function OurService() {
+export default function OurService({ apiUrl }) {
   return (
     <div className={styles['our-service-wrapper']}>
       <div
         id='service'
         className={styles['our-service']}
       />
-      <ServiceBox />
+      <ServiceBox apiUrl={apiUrl} />
 
       <WhyMusense />
     </div>

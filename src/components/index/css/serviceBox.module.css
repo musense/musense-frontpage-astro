@@ -7,6 +7,7 @@
   gap: 84px;
 }
 
+.service-box>a,
 .service-box>div {
   background-position: top;
   box-sizing: border-box;
@@ -23,8 +24,13 @@
   user-select: none;
   justify-content: space-between;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  white-space: pre;
 }
 
+.service-box>a::after,
 .service-box>div::after {
   content: '';
   position: absolute;
@@ -37,6 +43,7 @@
   transform: translateX(-50%);
 }
 
+.service-box>a:hover::after,
 .service-box>div:hover::after {
   /* TODO: 正式需解除 */
   /* background-image: url(/assets/button/more_h.webp); */
@@ -48,26 +55,24 @@
   align-items: center;
   text-align: center;
   gap: 4px;
+  color: black;
 }
 
 .service-header:first-child {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .service-header:last-child {
   font-size: 12px;
   letter-spacing: 1.5px;
-  white-space: wrap;
+  /* white-space: wrap; */
 }
 
 .service-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   text-align: center;
-  gap: 18px;
   color: white;
-  white-space: nowrap;
+  line-height: 2.5;
 }
 
 .advertising {
@@ -115,6 +120,7 @@
     gap: unset;
   }
 
+  .service-box>a,
   .service-box>div {
     background-position: top;
     box-sizing: border-box;
@@ -133,8 +139,10 @@
     height: 26rem;
     padding: unset;
     padding-bottom: 1rem;
+    padding: unset;;
   }
 
+  .service-box>a::after,
   .service-box>div::after {
     background-image: url(/assets/button/more.webp);
     content: "";
@@ -148,6 +156,7 @@
     background-size: cover;
   }
 
+  .service-box>a:hover::after,
   .service-box>div:hover::after {
     /* TODO: 正式需解除 */
     /* background-image: url(/assets/button/more_h.webp); */
@@ -170,12 +179,7 @@
   }
 
   .service-body {
-    align-items: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
-    letter-spacing: 0.3rem;
+    line-height: 2;
+
   }
 }
