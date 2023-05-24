@@ -13,14 +13,28 @@ export default function HeaderLayout() {
   useRefresh()
   const pathname = usePathname();
   const hamburgerRef = useRef(null);
+  const navRef = useRef(null);
   const navBackdropRef = useRef(null);
   const [active, setActive] = useState(false);
   let hamburgerCheck
 
-  const navBackdropHandler = (e) =>{
+  const navBackdropHandler = (e) => {
     console.log(e.target);
-        unCheck()
+    unCheck()
   }
+
+  const navHandler=(e)=>{
+    console.log(e.type);
+    e.preventDefault()
+    e.stopPropagation()
+  }
+  useEffect(() => {
+    if (navRef.current === null) {
+      return
+    } else {
+      navRef.current.addEventListener('click', navHandler)
+    }
+  }, [navRef]);
   useEffect(() => {
     if (navBackdropRef.current === null) {
       return
@@ -66,7 +80,7 @@ export default function HeaderLayout() {
         {pathname !== undefined &&
           <div className={'navbar-wrapper'}>
             <Logo active={active} color={'gray'} />
-            <nav className={`${active ? 'active' : ''}`}>
+            <nav ref={navRef} className={`${active ? 'active' : ''}`}>
               {pathname === '/' && (
                 <ul>
                   <li onClick={() => unCheck()}>
