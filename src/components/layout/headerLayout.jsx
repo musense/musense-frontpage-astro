@@ -19,22 +19,25 @@ export default function HeaderLayout() {
   let hamburgerCheck
 
   const navBackdropHandler = (e) => {
-    console.log(e.target);
+    console.log(e.target)
     unCheck()
   }
 
-  const navHandler=(e)=>{
-    console.log(e.type);
+  const navHandler = (e) => {
+    console.log(e.type)
     e.preventDefault()
-    e.stopPropagation()
   }
   useEffect(() => {
     if (navRef.current === null) {
       return
     } else {
-      navRef.current.addEventListener('click', navHandler)
+      navRef.current.addEventListener("touchstart", navHandler)
+      navRef.current.addEventListener("wheel", navHandler)
+      navRef.current.addEventListener("scroll", navHandler)
+      navRef.current.addEventListener("touchmove", navHandler)
     }
-  }, [navRef]);
+  }, [navRef.current]);
+
   useEffect(() => {
     if (navBackdropRef.current === null) {
       return
