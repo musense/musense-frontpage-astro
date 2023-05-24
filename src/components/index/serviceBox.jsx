@@ -38,9 +38,9 @@ export default function ServiceBox({ apiUrl }) {
     const res = await instance(apiUrl).get(`/categories`)
       .then(res => res.data)
     const { data, totalCount, totalPages } = res;
-    console.table(data)
-    console.log("🚀 ~ file: serviceBox.jsx:18 ~ getTitleContentsByCategoryAsync ~ totalCount:", totalCount)
-    console.log("🚀 ~ file: serviceBox.jsx:18 ~ getTitleContentsByCategoryAsync ~ totalPages:", totalPages)
+    // console.table(data)
+    // console.log("🚀 ~ file: serviceBox.jsx:18 ~ getTitleContentsByCategoryAsync ~ totalCount:", totalCount)
+    // console.log("🚀 ~ file: serviceBox.jsx:18 ~ getTitleContentsByCategoryAsync ~ totalPages:", totalPages)
 
     setItem(data)
   }
@@ -55,7 +55,7 @@ export default function ServiceBox({ apiUrl }) {
     return namesMap.map((name, index) => {
       const serviceItem = item.find(item => item.keyName === name.en_title.replace(/\n/g, ' '))
       const url = serviceItem.originalUrl ? serviceItem.originalUrl : serviceItem.sitemapUrl
-      console.log("🚀 ~ file: serviceBox.jsx:55 ~ serviceHeader ~ serviceItem:", serviceItem)
+      // console.log("🚀 ~ file: serviceBox.jsx:55 ~ serviceHeader ~ serviceItem:", serviceItem)
       return <a href={url} key={index} className={styles[name.className]}>
         <div className={styles['service-header']}>
           <div>{name.zn_title}</div>

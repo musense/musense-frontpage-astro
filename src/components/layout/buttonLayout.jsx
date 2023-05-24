@@ -1,7 +1,7 @@
 import HeaderScrollLink from './HeaderScrollLink';
 
 export default function ButtonLayout({ path }) {
-    console.log("🚀 ~ file: buttonLayout.jsx:4 ~ ButtonLayout ~ path:", path)
+    // console.log("🚀 ~ file: buttonLayout.jsx:4 ~ ButtonLayout ~ path:", path)
     const disable = path === '/' ? false : true
     return (
         <div className='btn-wrapper'>
