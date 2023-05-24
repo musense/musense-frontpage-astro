@@ -1,55 +1,23 @@
 // import styles from './css/headerLayout.module.css'
 import Logo from './logo';
-import HeaderHashLink from './HeaderHashLink';
-import HeaderScrollLink from './HeaderScrollLink';
 
 import usePathname from './hook/usePathname';
 import useShowHeader from './hook/useShowHeader';
 import useRefresh from './hook/useRefresh';
 import Hamburger from './hamburger';
+import NavWrapper from './NavWrapper';
+import NavBackDrop from './NavBackDrop';
 import { useState, useEffect, useRef } from 'react';
+
+
 
 export default function HeaderLayout() {
   useRefresh()
   const pathname = usePathname();
   const hamburgerRef = useRef(null);
-  const navRef = useRef(null);
-  const navBackdropRef = useRef(null);
+
   const [active, setActive] = useState(false);
   let hamburgerCheck
-
-  const navBackdropHandler = (e) => {
-    console.log(e.target)
-    unCheck()
-  }
-
-  const navHandler = (e) => {
-    console.log(e.type)
-    e.preventDefault()
-  }
-  useEffect(() => {
-    if (navRef.current === null) {
-      return
-    } else {
-      navRef.current.addEventListener("touchstart", navHandler)
-      navRef.current.addEventListener("wheel", navHandler)
-      navRef.current.addEventListener("scroll", navHandler)
-      navRef.current.addEventListener("touchmove", navHandler)
-    }
-  }, [navRef.current]);
-
-  useEffect(() => {
-    if (navBackdropRef.current === null) {
-      return
-
-    } else {
-      // navBackdropRef.current.addEventListener("click", navBackdropHandler)
-      // navBackdropRef.current.addEventListener("touchstart", navBackdropHandler)
-      navBackdropRef.current.addEventListener("touchend", navBackdropHandler)
-      navBackdropRef.current.addEventListener("wheel", navBackdropHandler)
-      navBackdropRef.current.addEventListener("scroll", navBackdropHandler)
-    }
-  }, [navBackdropRef]);
 
 
   useEffect(() => {
@@ -74,7 +42,10 @@ export default function HeaderLayout() {
   return (
     <>
       <header className={`${showHeader ? 'show' : 'hide'}`}>
-        <div ref={navBackdropRef} id="nav-backdrop" className={`${active ? 'active' : ''}`} />
+        <NavBackDrop
+          active={active}
+          unCheck={unCheck}
+        />
         <Hamburger
           id={hamburgerRef.current}
           toggleHamburger={toggleHamburger}
@@ -83,97 +54,12 @@ export default function HeaderLayout() {
         {pathname !== undefined &&
           <div className={'navbar-wrapper'}>
             <Logo active={active} color={'gray'} />
-            <nav ref={navRef} className={`${active ? 'active' : ''}`}>
-              {pathname === '/' && (
-                <ul>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-about"
-                      offset={0}
-                      to='about'
-                      name='about'
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-service"
-                      offset={-10}
-                      to='service'
-                      name='service'
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-contactUs"
-                      offset={-10}
-                      to='contact'
-                      name='contact'
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li
-                    onClick={() => unCheck()}
-                  >
-                    <HeaderScrollLink
-                      currentId="a-marketing"
-                      offset={-10}
-                      to='/marketing'
-                      name='marketing'
-                      disableScroll
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                </ul>
-              )}
-              {(pathname === '/marketing' || pathname.startsWith('/content')) && (
-                <ul>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-about"
-                      offset={0}
-                      to='/'
-                      name='about'
-                      disableScroll
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-service"
-                      offset={-10}
-                      to='/'
-                      name='service'
-                      disableScroll
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li onClick={() => unCheck()}>
-                    <HeaderScrollLink
-                      currentId="a-contactUs"
-                      offset={-10}
-                      to='/'
-                      name='contact'
-                      disableScroll
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                  <li
-                    onClick={() => unCheck()}
-                  >
-                    <HeaderScrollLink
-                      currentId="a-marketing"
-                      offset={-10}
-                      to='/marketing'
-                      name='marketing'
-                      disableScroll
-                      callbackHandler={headerForceHide}
-                    />
-                  </li>
-                </ul>
-              )}
-            </nav>
+            <NavWrapper
+              active={active}
+              pathname={pathname}
+              unCheck={unCheck}
+              headerForceHide={headerForceHide}
+            />
 
           </div>
         }
@@ -181,3 +67,8 @@ export default function HeaderLayout() {
     </>
   );
 }
+
+
+
+
+
