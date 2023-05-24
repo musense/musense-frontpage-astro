@@ -3,6 +3,7 @@
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string
     readonly VITE_APP_DESCRIPTION: string
+    readonly VITE_SERVER_URL: string
     readonly EMAIL_SERVICE_KEY: string
     readonly EMAIL_TEMPLATE_KEY: string
     readonly EMAIL_PUBLIC_KEY: string
